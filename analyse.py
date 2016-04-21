@@ -71,6 +71,8 @@ def main():
       for i in range(len(pu[0])):
         pu[0][i][1] *= 1/stg_total_pu[i][1]
         pu[1][i][1] *= 1/bkt_total_pu[i][1]
+        stg_total_pu[i][1] *= 1/(stg_total_pu[i][1]+bkt_total_pu[i][1])
+        bkt_total_pu[i][1] *= 1/(stg_total_pu[i][1]+bkt_total_pu[i][1])
 
     print(stg_total_pu)
 
