@@ -1,0 +1,67 @@
+#!/bin/zsh
+cd /Users/mouginot/work/FCO/EG29/Calculation
+git checkout EG29_Case.1.1
+rm cyclus.sqlite; cyclus main.xml
+cyan -db cyclus.sqlite trans > EG29_Case.1.1.trans
+cyan -db cyclus.sqlite trans -nucs=239Pu > EG29_Case.1.1.trans.pu9
+cyan -db cyclus.sqlite trans -nucs=238U > EG29_Case.1.1.trans.u8
+
+git checkout EG29_Case.1.1_MF
+rm cyclus.sqlite; cyclus main.xml
+cyan -db cyclus.sqlite trans
+cyan -db cyclus.sqlite trans > EG29_Case.1.1_M.trans
+cyan -db cyclus.sqlite trans -nucs=239Pu > EG29_Case.1.1_M.trans.pu9
+cyan -db cyclus.sqlite trans -nucs=238U > EG29_Case.1.1_M.trans.u8
+
+
+
+git checkout EG29_Case.1.2
+rm cyclus.sqlite; cyclus main.xml
+cyan -db cyclus.sqlite trans
+cyan -db cyclus.sqlite trans > EG29_Case.1.2.trans
+cyan -db cyclus.sqlite trans -nucs=238Pu > EG29_Case.1.2.trans.pu8
+cyan -db cyclus.sqlite trans -nucs=239Pu > EG29_Case.1.2.trans.pu9
+cyan -db cyclus.sqlite trans -nucs=240Pu > EG29_Case.1.2.trans.pu10
+cyan -db cyclus.sqlite trans -nucs=241Pu > EG29_Case.1.2.trans.pu11
+cyan -db cyclus.sqlite trans -nucs=242Pu > EG29_Case.1.2.trans.pu12
+cyan -db cyclus.sqlite trans -nucs=235U > EG29_Case.1.2.trans.u5
+cyan -db cyclus.sqlite trans -nucs=238U > EG29_Case.1.2.trans.u8
+
+git checkout EG29_Case.1.2_MF
+rm cyclus.sqlite; cyclus main.xml
+cyan -db cyclus.sqlite trans
+cyan -db cyclus.sqlite trans > EG29_Case.1.2_M.trans
+cyan -db cyclus.sqlite trans -nucs=238Pu > EG29_Case.1.2_M.trans.pu8
+cyan -db cyclus.sqlite trans -nucs=239Pu > EG29_Case.1.2_M.trans.pu9
+cyan -db cyclus.sqlite trans -nucs=240Pu > EG29_Case.1.2_M.trans.pu10
+cyan -db cyclus.sqlite trans -nucs=241Pu > EG29_Case.1.2_M.trans.pu11
+cyan -db cyclus.sqlite trans -nucs=242Pu > EG29_Case.1.2_M.trans.pu12
+cyan -db cyclus.sqlite trans -nucs=235U > EG29_Case.1.2_M.trans.u5
+cyan -db cyclus.sqlite trans -nucs=238U > EG29_Case.1.2_M.trans.u8
+
+
+git checkout EG29_Case.1.3
+rm cyclus.sqlite; cyclus main.xml
+cyan -db cyclus.sqlite trans
+cyan -db cyclus.sqlite trans > EG29_Case.1.3.trans
+cyan -db cyclus.sqlite trans -nucs=238Pu > EG29_Case.1.3.trans.pu8
+cyan -db cyclus.sqlite trans -nucs=239Pu > EG29_Case.1.3.trans.pu9
+cyan -db cyclus.sqlite trans -nucs=240Pu > EG29_Case.1.3.trans.pu10
+cyan -db cyclus.sqlite trans -nucs=241Pu > EG29_Case.1.3.trans.pu11
+cyan -db cyclus.sqlite trans -nucs=242Pu > EG29_Case.1.3.trans.pu12
+cyan -db cyclus.sqlite trans -nucs=235U > EG29_Case.1.3.trans.u5
+cyan -db cyclus.sqlite trans -nucs=238U > EG29_Case.1.3.trans.u8
+
+git checkout EG29_Case.1.3_MF
+rm cyclus.sqlite; cyclus main.xml
+cyan -db cyclus.sqlite trans
+cyan -db cyclus.sqlite trans > EG29_Case.1.3_M.trans
+cyan -db cyclus.sqlite trans -nucs=238Pu > EG29_Case.1.3_M.trans.pu8
+cyan -db cyclus.sqlite trans -nucs=239Pu > EG29_Case.1.3_M.trans.pu9
+cyan -db cyclus.sqlite trans -nucs=240Pu > EG29_Case.1.3_M.trans.pu10
+cyan -db cyclus.sqlite trans -nucs=241Pu > EG29_Case.1.3_M.trans.pu11
+cyan -db cyclus.sqlite trans -nucs=242Pu > EG29_Case.1.3_M.trans.pu12
+cyan -db cyclus.sqlite trans -nucs=235U > EG29_Case.1.3_M.trans.u5
+cyan -db cyclus.sqlite trans -nucs=238U > EG29_Case.1.3_M.trans.u8
+
+mv EG29_Case*trans* /Users/mouginot/work/FCO/EG29/FCO_EG23_Mixing/
