@@ -17,7 +17,7 @@ def read(filename):
       Pu_storage.append( [int(words[0]),float(words[6])] )
 
 
-  return blanket,Pu_storage
+  return [blanket,Pu_storage]
 
 def read_data():
   case = [ 1, 2, 3 ]
@@ -33,22 +33,22 @@ def read_data():
       u_contrib_ =[]
       if (case_ == 1 ):
         filename = 'EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'pu' + str(9)
-        tmp = read(filename)
-        pu_contrib_.append(tmp)
+        tmp1,tmp2 = read(filename)
+        pu_contrib_.append([tmp1,tmp2])
         
         filename = 'EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'u' + str(8)
         tmp = read(filename)
-        u_contrib_.append(tmp)
+        u_contrib_.append([tmp1,tmp2])
 
       else :
         for pu_ in pu:
           filename = 'EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'pu' + str(pu_)
-          tmp = read(filename)
-          pu_contrib_.append(tmp)
+          tmp1,tmp2 = read(filename)
+          pu_contrib_.append([tmp1,tmp2])
         for u_ in u:
           filename = 'EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'u' + str(u_)
-          tmp = read(filename)
-          u_contrib_.append(tmp)
+          tmp1,tmp2 = read(filename)
+          u_contrib_.append([tmp1,tmp2])
       pu_contrib.append(pu_contrib_)
       u_contrib.append(u_contrib_)
   return pu_contrib,u_contrib
@@ -57,25 +57,77 @@ def read_data():
 def main():
   pu_contrib, u_contrib = read_data()
 
-  for case in pu_contrib:
-    stg_total_pu = []
-    bkt_total_pu = []
-    for i in range(len(case[0][0])):
-      stg_total_pu.append( [case[0][0][i][0],0] )
-      bkt_total_pu.append( [case[0][0][i][0],0] )
-    for pu in case:
+  stg_pu_contrib_relativ = []
+  bkt_pu_contrib_relativ = []
+  stg_total_pu = []
+  bkt_total_pu = []
+
+  for case_ in pu_contrib:
+    stg_total_pu_ = []
+    bkt_total_pu_ = []
+    stg_pu_contrib_relativ_ = []
+    bkt_pu_contrib_relativ_ = []
+
+    for i in range(len(case_[0][0])):
+      stg_total_pu_.append( [case_[0][0][i][0],0] )
+      bkt_total_pu_.append( [case_[0][0][i][0],0] )
+
+    for pu in case_:
       for i in range(len(pu[0])):
-        stg_total_pu[i][1] += pu[0][i][1]
-        bkt_total_pu[i][1] += pu[1][i][1]
-    for pu in case:
+        stg_total_pu_[i][1] += pu[0][i][1]
+        bkt_total_pu_[i][1] += pu[1][i][1]
+
+    for pu in case_:
       for i in range(len(pu[0])):
-        pu[0][i][1] *= 1/stg_total_pu[i][1]
-        pu[1][i][1] *= 1/bkt_total_pu[i][1]
-        stg_total_pu[i][1] *= 1/(stg_total_pu[i][1]+bkt_total_pu[i][1])
-        bkt_total_pu[i][1] *= 1/(stg_total_pu[i][1]+bkt_total_pu[i][1])
+        pu[0][i][1] *= 1/stg_total_pu_[i][1]
+        pu[1][i][1] *= 1/bkt_total_pu_[i][1]
+      stg_pu_contrib_relativ_.append(pu[0])
+      bkt_pu_contrib_relativ_.append(pu[1])
 
-    print(stg_total_pu)
+    for i in range(len(case_[0][0])):
+      stg_total_pu_[i][1] *= 1/(stg_total_pu_[i][1]+bkt_total_pu_[i][1])
+      bkt_total_pu_[i][1] *= 1/(stg_total_pu_[i][1]+bkt_total_pu_[i][1])
+    stg_total_pu.append(stg_total_pu_)
+    bkt_total_pu.append(bkt_total_pu_)
+    stg_pu_contrib_relativ.append(stg_pu_contrib_relativ_)
+    bkt_pu_contrib_relativ.append(bkt_pu_contrib_relativ_)
 
 
+  case = [ 1, 2, 3 ]
+  method = [ 'W', 'M' ]
+  pu = [ 8,9,10,11,12 ]
+  u  = [ 8 ]
+
+  file = open("stg_output_pu.dat","w")
+
+  name = "Time "
+  file.write(name)
+  for case_ in case:
+    for method_ in method:
+      name = "1." + str(case_) + "_" + method_ + "_Pu_Total "
+      file.write(name)
+      if ( case_ == 1 ):
+        name = "1." + str(case_) + "_" + method_ + "_Pu9 "
+        file.write(name)
+      else :
+        for pu_ in pu:
+          name = "1." + str(case_) + "_" + method_ + "_Pu" + str(pu_) + " "
+          file.write(name)
+  file.write("\n")
+
+  for i in range(len(stg_total_pu[0])):
+    file.write( str(stg_total_pu[0][i][0]) )
+    file.write(" ")
+    for j in range(len(stg_total_pu)):
+      file.write( str(stg_total_pu[j][i][1]) )
+      file.write(" ")
+      for k in range(len(stg_pu_contrib_relativ[j])):
+        print("1 ", len(stg_pu_contrib_relativ))
+        print("2 ", len(stg_pu_contrib_relativ[j]))
+        print("3 ", len(stg_pu_contrib_relativ[j][k]))
+        print("3 ", len(stg_total_pu[j]))
+        file.write( str(stg_pu_contrib_relativ[j][k][i][1]) )
+        file.write(" ")
+    file.write("\n")
 
 main()
