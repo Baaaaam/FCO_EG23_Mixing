@@ -30,21 +30,21 @@ def read_data():
       pu_contrib_ =[]
       u_contrib_ =[]
       if (case_ == 1 ):
-        filename = 'EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'pu' + str(9)
+        filename = 'data/EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'pu' + str(9)
         tmp1,tmp2 = read(filename)
         pu_contrib_.append([tmp1,tmp2])
         
-        filename = 'EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'u' + str(8)
+        filename = 'data/EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'u' + str(8)
         tmp = read(filename)
         u_contrib_.append([tmp1,tmp2])
 
       else :
         for pu_ in pu:
-          filename = 'EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'pu' + str(pu_)
+          filename = 'data/EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'pu' + str(pu_)
           tmp1,tmp2 = read(filename)
           pu_contrib_.append([tmp1,tmp2])
         for u_ in u:
-          filename = 'EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'u' + str(u_)
+          filename = 'data/EG29_Case.1.' + str(case_) + method_ + '.trans.' + 'u' + str(u_)
           tmp1,tmp2 = read(filename)
           u_contrib_.append([tmp1,tmp2])
       pu_contrib.append(pu_contrib_)

@@ -64,4 +64,4 @@ cyan -db cyclus.sqlite trans -nucs=242Pu > EG29_Case.1.3_M.trans.pu12
 cyan -db cyclus.sqlite trans -nucs=235U > EG29_Case.1.3_M.trans.u5
 cyan -db cyclus.sqlite trans -nucs=238U > EG29_Case.1.3_M.trans.u8
 
-mv EG29_Case*trans* /Users/mouginot/work/FCO/EG29/FCO_EG23_Mixing/
+mv EG29_Case*trans* /Users/mouginot/work/FCO/EG29/FCO_EG23_Mixing/data
