@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import numpy as np
-import pickle
 
 def read(filename):
   my_file = open(filename, 'r')
@@ -86,10 +85,8 @@ def main():
     stg_total_pu___ = np.copy(stg_total_pu_)
     bkt_total_pu___ = np.copy(bkt_total_pu_)
     for i in range(len(case_[0][0])):
-      print(stg_total_pu___[i][1], " ", stg_total_pu_[i][1] )
-      stg_total_pu_[i][1] *= 1/(stg_total_pu___[i][1]+bkt_total_pu___[i][1])
-      print(stg_total_pu___[i][1], " ", stg_total_pu_[i][1] )
-      bkt_total_pu_[i][1] *= 1/(stg_total_pu___[i][1]+bkt_total_pu___[i][1])
+      stg_total_pu_[i][1] *= 0.001/0.9*0.3/1.5#(stg_total_pu___[i][1]+bkt_total_pu___[i][1])
+      bkt_total_pu_[i][1] *= 0.001/0.9*0.3/1.5#(stg_total_pu___[i][1]+bkt_total_pu___[i][1])
 
     stg_total_pu.append(stg_total_pu_)
     bkt_total_pu.append(bkt_total_pu_)
@@ -123,7 +120,7 @@ def main():
     file.write( str(stg_total_pu[0][i][0]/12.) )
     file.write(" ")
     for j in range(len(stg_total_pu)):
-      file.write( str(stg_total_pu[j][i][1]*0.551) )
+      file.write( str(stg_total_pu[j][i][1]) )
       file.write(" ")
       for k in range(len(stg_pu_contrib_relativ[j])):
         file.write( str(stg_pu_contrib_relativ[j][k][i][1]) )
@@ -152,7 +149,7 @@ def main():
     file.write( str(bkt_total_pu[0][i][0]/12.) )
     file.write(" ")
     for j in range(len(bkt_total_pu)):
-      file.write( str(bkt_total_pu[j][i][1]*0.551) )
+      file.write( str(bkt_total_pu[j][i][1]) )
       file.write(" ")
       for k in range(len(bkt_pu_contrib_relativ[j])):
         file.write( str(bkt_pu_contrib_relativ[j][k][i][1]) )
