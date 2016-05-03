@@ -92,8 +92,8 @@ def main():
     drv_E1_total_pu___ = np.copy(drv_E1_total_pu_)
     drv_E2_total_pu___ = np.copy(drv_E2_total_pu_)
     for i in range(len(case_[0][0])):
-      drv_E1_total_pu_[i][1] *= 0.001/0.36*0.4/1.5#(drv_E1_total_pu___[i][1]+drv_E2_total_pu___[i][1])
-      drv_E2_total_pu_[i][1] *= 0.001/0.36*0.4/1.5#(drv_E1_total_pu___[i][1]+drv_E2_total_pu___[i][1])
+      drv_E1_total_pu_[i][1] *= 0.001/0.36*0.7/1.5#(drv_E1_total_pu___[i][1]+drv_E2_total_pu___[i][1])
+      drv_E2_total_pu_[i][1] *= 0.001/0.36*0.7/1.5#(drv_E1_total_pu___[i][1]+drv_E2_total_pu___[i][1])
 
     drv_E1_total_pu.append(drv_E1_total_pu_)
     drv_E2_total_pu.append(drv_E2_total_pu_)
