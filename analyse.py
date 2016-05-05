@@ -142,10 +142,10 @@ def build_contrib(name,contrib,factor):
     for i in range( len(total_u[-1]) ):
       total_u[-1][i][1] *= factor
     
-  filename = name + 'pu.dat'
+  filename = name + '_pu.dat'
   print_data( 'pu', filename, total_pu, pu_contrib_relativ)
   
-  filename = name + 'u.dat'
+  filename = name + '_u.dat'
   print_data( 'u', filename, total_u, u_contrib_relativ)
 
 
