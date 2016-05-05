@@ -427,14 +427,14 @@ Time SenderId SenderProto            ReceiverId ReceiverProto          Commodity
 1028 45       FBR_blanket_separation 51         Storage_E3_second      E3_second          5.850679586153299   
 1032 56       FBR_blanket            43         FBR_blanket_cooling    FBR_blanket_spent  11.053418239034096  
 1044 43       FBR_blanket_cooling    44         FBR_blanket_storage    FBR_blanket_cooled 11.053418239034096  
-1045 43       FBR_blanket_cooling    44         FBR_blanket_storage    FBR_blanket_cooled 22.10683647806819   
 1045 44       FBR_blanket_storage    45         FBR_blanket_separation FBR_blanket_stored 11.053418239034096  
+1045 43       FBR_blanket_cooling    44         FBR_blanket_storage    FBR_blanket_cooled 22.10683647806819   
+1046 44       FBR_blanket_storage    45         FBR_blanket_separation FBR_blanket_stored 22.10683647806819   
 1046 45       FBR_blanket_separation 33         waste                  waste              0.22500374726847971 
 1046 45       FBR_blanket_separation 48         Storage_E2_prime       E2_prime           0.5157912550578928  
 1046 45       FBR_blanket_separation 49         Storage_E2_second      E2_second          3.7828573085397137  
 1046 45       FBR_blanket_separation 50         Storage_E3_prime       E3_prime           0.6790863420147086  
 1046 45       FBR_blanket_separation 51         Storage_E3_second      E3_second          5.850679586153299   
-1046 44       FBR_blanket_storage    45         FBR_blanket_separation FBR_blanket_stored 22.10683647806819   
 1047 45       FBR_blanket_separation 33         waste                  waste              0.45000749453696354 
 1047 45       FBR_blanket_separation 48         Storage_E2_prime       E2_prime           1.0315825101157854  
 1047 45       FBR_blanket_separation 49         Storage_E2_second      E2_second          7.565714617079427   

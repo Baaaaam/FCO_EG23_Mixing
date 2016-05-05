@@ -1,29 +1,21 @@
 #!/usr/bin/env python
 import numpy as np
 
-def read(filename):
+def read(filename, out_fac, in_fac, commod):
   my_file = open(filename, 'r')
   data = my_file.readlines()
-  driver_E1 = []
-  driver_E2 = []
-  blt_nat = []
-  blt_E4 = []
-  
+  data_row = []
+
   for line in data:
     words = line.split()
-    if(words[4] == "FBR_driver_fabrication" and words[5] == "E1_second_stored" ):
-      driver_E1.append( [int(words[0]),float(words[6])] )
-    if(words[4] == "FBR_driver_fabrication" and words[5] == "E2_second_stored" ):
-      driver_E2.append( [int(words[0]),float(words[6])] )
-    if(words[4] == "FBR_blanket_fabrication" and words[5] == "natl_u" ):
-      blt_nat.append( [int(words[0]),float(words[6])] )
-    if(words[4] == "FBR_blanket_fabrication" and words[5] == "E4_stored" ):
-      blt_E4.append( [int(words[0]),float(words[6])] )
+    if( ( words[2] == out_fac or out_fac == "" )
+        and (words[4] == in_fac or in_fac == "" )
+        and (words[5] == commod or commod == "" ) ):
+      data_row.append( [int(words[0]),float(words[6])] )
 
-  print(filename,": ", len(driver_E1), " ", len(driver_E2), " ", len(blt_nat), " ", len(blt_E4)) 
-  return [driver_E1,driver_E2,blt_nat,blt_E4]
+  return data_row
 
-def read_data():
+def read_data(file_root, out_fac, in_fac, comods):
   case = [ 1, 2, 3 ]
 #  method = [ '', '_M' ]
   method = [ '_M' ]
@@ -31,151 +23,144 @@ def read_data():
   u  = [ 8 ]
   pu_contrib = []
   u_contrib = []
+  
   for case_ in case:
-    
     for method_ in method:
-      pu_contrib_ =[]
-      u_contrib_ =[]
-      if (case_ == 1 ):
-        filename = 'data/EG29_Case.2.' + str(case_) + method_ + '.trans.' + 'pu' + str(9)
-        tmp1,tmp2,tmp3,tmp4 = read(filename)
-        pu_contrib_.append([tmp1,tmp2])
-        
-        filename = 'data/EG29_Case.2.' + str(case_) + method_ + '.trans.' + 'u' + str(8)
-        tmp1,tmp2,tmp3,tmp4 = read(filename)
-        u_contrib_.append([tmp1,tmp2])
-
+      pu_contrib_ = []
+      u_contrib_ = []
+      if ( case_ == 1 ):
+        filename = file_root + str(case_) + method_ + '.trans.' + 'pu' + str(9)
+        pu_contrib_.append([read(filename, out_fac, in_fac, comods)])
+        filename = file_root + str(case_) + method_ + '.trans.' + 'u' + str(8)
+        u_contrib_.append([read(filename, out_fac, in_fac, comods)])
       else :
         for pu_ in pu:
-          filename = 'data/EG29_Case.2.' + str(case_) + method_ + '.trans.' + 'pu' + str(pu_)
-          tmp1,tmp2,tmp3,tmp4 = read(filename)
-          pu_contrib_.append([tmp1,tmp2])
+          filename = file_root + str(case_) + method_ + '.trans.' + 'pu' + str(pu_)
+          pu_contrib_.append([read(filename, out_fac, in_fac, comods)])
         for u_ in u:
-          filename = 'data/EG29_Case.2.' + str(case_) + method_ + '.trans.' + 'u' + str(u_)
-          tmp1,tmp2,tmp3,tmp4 = read(filename)
-          u_contrib_.append([tmp1,tmp2])
+          filename = file_root + str(case_) + method_ + '.trans.' + 'u' + str(u_)
+          u_contrib_.append([read(filename, out_fac, in_fac, comods)])
+      filename = file_root + str(case_) + method_ + '.trans.' + 'pu'
+      pu_contrib_.append([read(filename, out_fac, in_fac, comods)])
+      filename = file_root + str(case_) + method_ + '.trans.' + 'u'
+      u_contrib_.append([read(filename, out_fac, in_fac, comods)])
       pu_contrib.append(pu_contrib_)
       u_contrib.append(u_contrib_)
-  return pu_contrib,u_contrib
+  return pu_contrib, u_contrib
 
 
-def main():
-  pu_contrib, u_contrib = read_data()
-
-  drv_E1_pu_contrib_relativ = []
-  drv_E2_pu_contrib_relativ = []
-  drv_E1_total_pu = []
-  drv_E2_total_pu = []
-
-  for case_ in pu_contrib:
-    drv_E1_total_pu_ = []
-    drv_E2_total_pu_ = []
-    drv_E1_pu_contrib_relativ_ = []
-    drv_E2_pu_contrib_relativ_ = []
-
-    for i in range(len(case_[0][0])):
-      drv_E1_total_pu_.append( [case_[0][0][i][0],0] )
-      drv_E2_total_pu_.append( [case_[0][0][i][0],0] )
-
-    for pu in case_:
-      for i in range(len(pu[0])):
-        drv_E1_total_pu_[i][1] += pu[0][i][1]
-        drv_E2_total_pu_[i][1] += pu[1][i][1]
-
-    for pu in case_:
-      for i in range(len(pu[0])):
-        pu[0][i][1] *= 1/drv_E1_total_pu_[i][1]
-        pu[1][i][1] *= 1/drv_E2_total_pu_[i][1]
-      drv_E1_pu_contrib_relativ_.append(pu[0])
-      drv_E2_pu_contrib_relativ_.append(pu[1])
-
-    drv_E1_total_pu___ = np.copy(drv_E1_total_pu_)
-    drv_E2_total_pu___ = np.copy(drv_E2_total_pu_)
-    for i in range(len(case_[0][0])):
-      drv_E1_total_pu_[i][1] *= 0.001/0.36*0.7/1.5#(drv_E1_total_pu___[i][1]+drv_E2_total_pu___[i][1])
-      drv_E2_total_pu_[i][1] *= 0.001/0.36*0.7/1.5#(drv_E1_total_pu___[i][1]+drv_E2_total_pu___[i][1])
-
-    drv_E1_total_pu.append(drv_E1_total_pu_)
-    drv_E2_total_pu.append(drv_E2_total_pu_)
-    drv_E1_pu_contrib_relativ.append(drv_E1_pu_contrib_relativ_)
-    drv_E2_pu_contrib_relativ.append(drv_E2_pu_contrib_relativ_)
-
-
+def print_data(nuclide,filename,total,isotopic):
+  
   case = [ 1, 2, 3 ]
 #  method = [ 'W', 'M' ]
   method = [ 'M' ]
   pu = [ 8,9,10,11,12 ]
   u  = [ 8 ]
-
-  file = open("drv_E1_output_pu.dat","w")
+  file = open(filename,"w")
 
   name = "Time "
   file.write(name)
-  for case_ in case:
-    for method_ in method:
-      name = "1." + str(case_) + "-" + method_ + "-Pu-Total "
-      file.write(name)
-      if ( case_ == 1 ):
-        name = "1." + str(case_) + "-" + method_ + "-Pu9 "
+  if (nuclide == 'pu'):
+    for case_ in case:
+      for method_ in method:
+        name = "2." + str(case_) + "-" + method_ + "-Pu-Total "
         file.write(name)
-      else :
-        for pu_ in pu:
-          name = "1." + str(case_) + "-" + method_ + "-Pu" + str(pu_) + " "
+        if ( case_ == 1 ):
+          name = "2." + str(case_) + "-" + method_ + "-Pu9 "
           file.write(name)
+        else :
+          for pu_ in pu:
+            name = "2." + str(case_) + "-" + method_ + "-Pu" + str(pu_) + " "
+            file.write(name)
+  elif (nuclide == 'u'):
+    for case_ in case:
+      for method_ in method:
+        name = "2." + str(case_) + "-" + method_ + "-U-Total "
+        file.write(name)
+        if ( case_ == 1 ):
+          name = "2." + str(case_) + "-" + method_ + "-U8 "
+          file.write(name)
+        else :
+          for u_ in u:
+            name = "2." + str(case_) + "-" + method_ + "-U" + str(u_) + " "
+            file.write(name)
+  else:
+    print('OUPS!!!! what nuclide again ?!')
+
+
   file.write("\n")
 
-  for i in range(len(drv_E1_total_pu[0])):
-    file.write( str(drv_E1_total_pu[0][i][0]/12.) )
+  for i in range(len(total[0])):
+    file.write( str(total[0][i][0]/12.) )
     file.write(" ")
-    for j in range(len(drv_E1_total_pu)):
-      if ( len(drv_E1_total_pu[j]) < i+1 ):
+    for j in range(len(total)):
+      if ( len(total[j]) < i+1 ):
         file.write(str(0))
       else:
-        file.write( str(drv_E1_total_pu[j][i][1]) )
+        file.write( str(total[j][i][1]) )
       file.write(" ")
-      for k in range(len(drv_E1_pu_contrib_relativ[j])):
-        if ( len(drv_E1_pu_contrib_relativ[j][k]) < i+1 ):
+      
+      for k in range(len(isotopic[j])):
+        if ( len(isotopic[j][k]) < i+1 ):
           file.write(str(0))
         else:
-          file.write( str(drv_E1_pu_contrib_relativ[j][k][i][1]) )
+          file.write( str(isotopic[j][k][i][1]) )
         file.write(" ")
     file.write("\n")
   file.close()
 
-  file = open("drv_E2_output_pu.dat","w")
+
+def build_contrib(name,contrib,factor):
+  u = contrib[1]
+  pu = contrib[0]
+  pu_contrib_relativ = []
+  u_contrib_relativ = []
+  total_pu = []
+  total_u = []
+ 
+  for case in pu:
+    pu_contrib_ = []
+    for contrib_ in case[0:-1]:
+      pu_contrib_.append(contrib_[0])
+      for i in range( len(pu_contrib_[-1]) ):
+        pu_contrib_[-1][i][1] *= 1/case[-1][0][i][1]
+
+    total_pu.append(case[-1][0])
+    pu_contrib_relativ.append(pu_contrib_)
+    for i in range( len(total_pu[-1]) ):
+      total_pu[-1][i][1] *= factor
+     
+  for case in u:
+    u_contrib_ = []
+    for contrib_ in case[0:-1]: 
+      u_contrib_.append(contrib_[0])
+      for i in range( len(u_contrib_[-1]) ):
+        u_contrib_[-1][i][1] *= 1/case[-1][0][i][1] 
+
+    u_contrib_relativ.append(u_contrib_)
+    total_u.append(case[-1][0])
+    for i in range( len(total_u[-1]) ):
+      total_u[-1][i][1] *= factor
+    
+  filename = name + 'pu.dat'
+  print_data( 'pu', filename, total_pu, pu_contrib_relativ)
   
-  name = "Time "
-  file.write(name)
-  for case_ in case:
-    for method_ in method:
-      name = "1." + str(case_) + "-" + method_ + "-Pu-Total "
-      file.write(name)
-      if ( case_ == 1 ):
-        name = "1." + str(case_) + "-" + method_ + "-Pu9 "
-        file.write(name)
-      else :
-        for pu_ in pu:
-          name = "1." + str(case_) + "-" + method_ + "-Pu" + str(pu_) + " "
-          file.write(name)
-  file.write("\n")
+  filename = name + 'u.dat'
+  print_data( 'u', filename, total_u, u_contrib_relativ)
 
-  for i in range(len(drv_E2_total_pu[0])):
-    file.write( str(drv_E2_total_pu[0][i][0]/12.) )
-    file.write(" ")
-    for j in range(len(drv_E2_total_pu)):
-      if ( len(drv_E2_total_pu[j]) < i+1 ):
-        file.write(str(0))
-      else:
-        file.write( str(drv_E2_total_pu[j][i][1]) )
-      file.write(" ")
-      for k in range(len(drv_E2_pu_contrib_relativ[j])):
-        if ( len(drv_E2_pu_contrib_relativ[j][k]) < i+1 ):
-          file.write(str(0))
-        else:
-          file.write( str(drv_E2_pu_contrib_relativ[j][k][i][1]) )
-        file.write(" ")
-    file.write("\n")
-  file.close()
 
+def main():
+  # Recovering Case 2 E1_data
+  #pu_contrib, u_contrib = read_data('data/EG29_Case.2.', '', 'FBR_driver_fabrication', 'E1_second_stored' )
+  build_contrib('E1_prime', read_data('data/EG29_Case.2.', 'FBR_driver_separation', '', 'E1_prime' ), 0.001/0.36*0.7/1.5 )
+  build_contrib('E1_second', read_data('data/EG29_Case.2.', '', 'FBR_driver_fabrication', 'E1_second_stored' ), 0.001/0.36*0.7/1.5 )
+  
+  build_contrib('E2_prime', read_data('data/EG29_Case.2.', 'FBR_blanket_separation', '', 'E2_prime' ), 0.001/0.36*0.7/1.5 )
+  build_contrib('E2_second', read_data('data/EG29_Case.2.', '', 'FBR_driver_fabrication', 'E2_second_stored' ), 0.001/0.36*0.7/1.5 )
+
+  build_contrib('E3_prime', read_data('data/EG29_Case.2.', 'FBR_blanket_separation', '', 'E3_prime' ), 0.001/0.36*0.7/1.5 )
+  build_contrib('E3_second', read_data('data/EG29_Case.2.', 'FBR_blanket_separation', '', 'E3_second' ), 0.001/0.36*0.7/1.5 )
+
+  build_contrib('E4', read_data('data/EG29_Case.2.', '', 'FBR_blanket_fabrication', 'E4_stored' ), 0.001/0.36*0.7/1.5 )
 
 main()
