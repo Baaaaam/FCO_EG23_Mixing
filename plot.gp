@@ -96,6 +96,6 @@ plot [0.25:100][0.038:0.042] 'J1_prime_pu.dat' using 1:2 with linespoints title 
 #PLOT J1 contribution stograe:
 set key bottom left
 set output "C_1.x_M.J1p_u_contribution.png"
-plot [0.25:100][] 'J1_prime_u.dat' using 1:2 with linespoints title columnheader, \
+plot [0.25:100][0.6:0.61] 'J1_prime_u.dat' using 1:2 with linespoints title columnheader, \
   '' using 1:4 with linespoints title columnheader, \
   '' using 1:6 with linespoints title columnheader
