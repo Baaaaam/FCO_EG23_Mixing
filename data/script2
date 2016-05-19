@@ -1,0 +1,22 @@
+cp EG29_Case.1.3_MLP.trans      EG29_Case.1.1_MLP.trans
+cp EG29_Case.1.3_MLP.trans.pu   EG29_Case.1.1_MLP.trans.pu
+cp EG29_Case.1.3_MLP.trans.pu10 EG29_Case.1.1_MLP.trans.pu10
+cp EG29_Case.1.3_MLP.trans.pu11 EG29_Case.1.1_MLP.trans.pu11
+cp EG29_Case.1.3_MLP.trans.pu12 EG29_Case.1.1_MLP.trans.pu12
+cp EG29_Case.1.3_MLP.trans.pu8  EG29_Case.1.1_MLP.trans.pu8
+cp EG29_Case.1.3_MLP.trans.pu9  EG29_Case.1.1_MLP.trans.pu9
+cp EG29_Case.1.3_MLP.trans.u    EG29_Case.1.1_MLP.trans.u
+cp EG29_Case.1.3_MLP.trans.u5   EG29_Case.1.1_MLP.trans.u5
+cp EG29_Case.1.3_MLP.trans.u8   EG29_Case.1.1_MLP.trans.u8
+
+cp EG29_Case.1.2_MLP-STD.trans      EG29_Case.1.1_MLP-STD.trans
+cp EG29_Case.1.2_MLP-STD.trans.pu   EG29_Case.1.1_MLP-STD.trans.pu
+cp EG29_Case.1.2_MLP-STD.trans.pu10 EG29_Case.1.1_MLP-STD.trans.pu10
+cp EG29_Case.1.2_MLP-STD.trans.pu11 EG29_Case.1.1_MLP-STD.trans.pu11
+cp EG29_Case.1.2_MLP-STD.trans.pu12 EG29_Case.1.1_MLP-STD.trans.pu12
+cp EG29_Case.1.2_MLP-STD.trans.pu8  EG29_Case.1.1_MLP-STD.trans.pu8
+cp EG29_Case.1.2_MLP-STD.trans.pu9  EG29_Case.1.1_MLP-STD.trans.pu9
+cp EG29_Case.1.2_MLP-STD.trans.u    EG29_Case.1.1_MLP-STD.trans.u
+cp EG29_Case.1.2_MLP-STD.trans.u5   EG29_Case.1.1_MLP-STD.trans.u5
+cp EG29_Case.1.2_MLP-STD.trans.u8   EG29_Case.1.1_MLP-STD.trans.u8
+

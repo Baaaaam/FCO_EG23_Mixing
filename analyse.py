@@ -15,10 +15,10 @@ def read(filename, out_fac, in_fac, commod):
 
   return data_row
 
-def read_data(file_root, out_fac, in_fac, comods):
+def read_data(file_root, out_fac, in_fac, comods, method):
   case = [ 1, 2, 3 ]
-#  method = [ '', '_M' ]
-  method = [ '_M' ]
+#  case = [ 3 ]
+#  method = [ '_M' ]
   pu = [ 8,9,10,11,12 ]
   u  = [ 8 ]
   pu_contrib = []
@@ -49,11 +49,11 @@ def read_data(file_root, out_fac, in_fac, comods):
   return pu_contrib, u_contrib
 
 
-def print_data(nuclide,filename,total,isotopic):
+def print_data(nuclide,filename,total,isotopic, method):
   
   case = [ 1, 2, 3 ]
-#  method = [ 'W', 'M' ]
-  method = [ 'M' ]
+#  case = [ 3 ]
+#  method = [ 'M' ]
   pu = [ 8,9,10,11,12 ]
   u  = [ 8 ]
   file = open(filename,"w")
@@ -110,7 +110,7 @@ def print_data(nuclide,filename,total,isotopic):
   file.close()
 
 
-def build_contrib(name,contrib,factor):
+def build_contrib(name,contrib,factor, method):
   u = contrib[1]
   pu = contrib[0]
   pu_contrib_relativ = []
@@ -143,17 +143,105 @@ def build_contrib(name,contrib,factor):
       total_u[-1][i][1] *= factor
     
   filename = name + '_pu.dat'
-  print_data( 'pu', filename, total_pu, pu_contrib_relativ)
+  print_data_ind( 'pu', filename, total_pu, pu_contrib_relativ, method)
   
   filename = name + '_u.dat'
-  print_data( 'u', filename, total_u, u_contrib_relativ)
+  print_data_ind( 'u', filename, total_u, u_contrib_relativ, method)
 
+
+
+def print_data_ind(nuclide,filename,total,isotopic, method):
+  
+  case = [ 1, 2, 3 ]
+  pu = [ 8,9,10,11,12 ]
+  u  = [ 8 ]
+
+  p = 0
+  if (nuclide == 'pu'):
+    for c in range(len(case)):
+      for m in range(len(method)):
+        filename_ = str(case[c]) + "_" + method[m] + "_" + filename
+        print(filename_)
+        file = open(filename_,"w")
+        name = "Time "
+        file.write(name)
+        name = str(case[c]) + "-" + method[m] + "-" + "Pu-Total "
+        file.write(name)
+        if ( case[c] == 1 ):
+          name = str(case[c]) + "-" + method[m] + "-" + "Pu9 "
+          file.write(name)
+        else :
+          for pu_ in pu:
+            name = str(case[c]) + "-" + method[m] + "-" + "Pu" + str(pu_) + " "
+            file.write(name)
+
+        file.write("\n")
+
+        for i in range(len(total[p])):
+          file.write( str(total[p][i][0]/12.) )
+          file.write(" ")
+          file.write( str(total[p][i][1]) )
+          file.write(" ")
+      
+          for k in range(len(isotopic[p])):
+            file.write( str(isotopic[p][k][i][1]) )
+            file.write(" ")
+          file.write("\n")
+        file.close()
+        p += 1
+
+  elif (nuclide == 'u'):
+    for c in range(len(case)):
+      for m in range(len(method)):
+        filename_ = str(case[c]) + "_" + method[m] + "_" + filename
+        file = open(filename_,"w")
+        name = "Time "
+        file.write(name)
+        name = str(case[c]) + "-" + method[m] + "-" + "U-Total "
+        file.write(name)
+        if ( case[c] == 1 ):
+          name = str(case[c]) + "-" + method[m] + "-" + "U8 "
+          file.write(name)
+        else :
+          for u_ in u:
+            name = str(case[c]) + "-" + method[m] + "-" + "U" + str(u_) + " "
+            file.write(name)
+
+              
+        file.write("\n")
+
+        for i in range(len(total[p])):
+          file.write( str(total[p][i][0]/12.) )
+          file.write(" ")
+          file.write( str(total[p][i][1]) )
+          file.write(" ")
+      
+          for k in range(len(isotopic[p])):
+            file.write( str(isotopic[p][k][i][1]) )
+            file.write(" ")
+          file.write("\n")
+        file.close()
+        p += 1
+  else:
+    print('OUPS!!!! what nuclide again ?!')
+
+
+  
 
 def main():
 
-  build_contrib('E3_second', read_data('data/EG29_Case.1.', '', 'PWR_fabrication', 'E3_second_stored' ), 0.001/0.9*0.3/1.5 )
-  build_contrib('J1_second', read_data('data/EG29_Case.1.', '', 'PWR_fabrication', 'J1_second_stored' ), 0.001/0.9*0.3/1.5 )
-  build_contrib('J1_prime', read_data('data/EG29_Case.1.', 'PWR_separation', '', 'J1_prime' ), 0.001/0.9*0.3/1.5 )
+  method_r = [ '', '_M' ]
+  method = [ 'W', 'M' ]
+  build_contrib('E3_second', read_data('data/EG29_Case.1.', '', 'PWR_fabrication', 'E3_second_stored', method_r ), 0.001/0.9*0.3/1.5, method )
+  build_contrib('J1_second', read_data('data/EG29_Case.1.', '', 'PWR_fabrication', 'J1_second_stored', method_r ), 0.001/0.9*0.3/1.5, method )
+  build_contrib('J1_prime', read_data('data/eg29_case.1.', 'PWR_separation', '', 'J1_prime', method_r ), 0.001/0.9*0.3/1.5, method )
 
+  method_r = [ '', '_M', '_MLP', '_MLP-STD' ]
+  method = [ 'W', 'M', 'MLP', 'MLP-STD' ]
+  build_contrib('MOX_fuel', read_data('data/EG29_Case.1.', 'PWR_fabrication', '', 'PWR_MOX_new', method_r ), 0.001/0.9*0.3/1.5, method )
+  
+  build_contrib('LWR_OUT', read_data('data/EG29_Case.1.', '', 'PWR_cooling', 'PWR_MOX_spent', method_r ), 0.001/0.9*0.3/1.5, method )
+#/6.58063000
+  #  build_contrib('test', read_data('data/EG29_Case.1.', '', 'PWR_fabrication', 'J1_second_stored' ), 1 )
 
 main()

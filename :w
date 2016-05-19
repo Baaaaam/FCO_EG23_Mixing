@@ -1,0 +1,111 @@
+#!/usr/bin/env gnuplot
+#Header
+set grid xtics ytics
+show grid
+set key center right autotitle columnheader box
+set terminal png size 1000,750 enhanced font "Helvetica,20"
+show xlabel
+show ylabel
+
+set xlabel "Date [y]"
+set ylabel "Pu contribution [t/GWey]"
+
+#PLOT J1 contribution stograe:
+set key bottom left
+set output "C_1.x.E3s_pu_contribution.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '1_M_E3_second_pu.dat'  using 1:2 with linespoints title columnheader, \
+  '' using 1:6 with linespoints title columnheader, \
+  '' using 1:18 with linespoints title columnheader, \
+  '' using 1:4 with linespoints title columnheader, \
+  '' using 1:12 with linespoints title columnheader, \
+  '' using 1:24 with linespoints title columnheader
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set ylabel "U contribution [t/GWey]"
+set output "C_1.x.E3s_u_contribution.png"
+plot [0.25:100][] '1_M_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
+  '' using 1:6 with linespoints title columnheader, \
+  '' using 1:10 with linespoints title columnheader, \
+  '' using 1:4 with linespoints title columnheader, \
+  '' using 1:8 with linespoints title columnheader, \
+  '' using 1:12 with linespoints title columnheader
+
+#PLOT J1 contribution stograe:
+set key center left
+set output "C_1.x.J1s_pu_contribution.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '1_M_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
+  '' using 1:6 with linespoints title columnheader, \
+  '' using 1:18 with linespoints title columnheader, \
+  '' using 1:4 with linespoints title columnheader, \
+  '' using 1:12 with linespoints title columnheader, \
+  '' using 1:24 with linespoints title columnheader
+
+#PLOT J1 contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "C_1.x.J1s_u_contribution.png"
+plot [0.25:100][] '1_M_J1_second_u.dat' using 1:2 with linespoints title columnheader, \
+  '' using 1:6 with linespoints title columnheader, \
+  '' using 1:10 with linespoints title columnheader, \
+  '' using 1:4 with linespoints title columnheader, \
+  '' using 1:8 with linespoints title columnheader, \
+  '' using 1:12 with linespoints title columnheader
+
+
+###################################################################################
+###################################################################################
+###################################################################################
+
+
+#PLOT E3s Pu :
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "C_1.x_M.E3s_pu_contribution.png"
+plot [0.25:100][] '1_M_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
+  '2_M_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
+  '3_M_E3_second_pu.dat' using 1:2 with linespoints title columnheader
+
+
+#PLOT E3s U :
+set key top left
+set ylabel "U contribution [t/GWey]"
+set output "C_1.x_M.E3s_u_contribution.png"
+plot [0.25:100][] '1_M_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
+  '2_M_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
+  '3_M_E3_second_u.dat' using 1:2 with linespoints title columnheader
+
+#PLOT J1s Pu:
+set ylabel "Pu contribution [t/GWey]"
+set key bottom left
+set output "C_1.x_M.J1s_pu_contribution.png"
+plot [0.25:100][] '1_M_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
+  '2_M_J1_second_u.dat' using 1:2 with linespoints title columnheader, \
+  '3_M_J1_second_u.dat' using 1:2 with linespoints title columnheader
+
+#PLOT J1s U :
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "C_1.x_M.J1s_u_contribution.png"
+plot [0.25:100][] '1_m_j1_second_u.dat' using 1:2 with linespoints title columnheader, \
+  '2_M_J1_prime_u.dat' using 1:2 with linespoints title columnheader, \
+  '3_M_J1_prime_u.dat' using 1:2 with linespoints title columnheader
+
+#PLOT J1p Pu :
+set key bottom left
+set output "C_1.x_M.J1p_pu_contribution.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][0.038:0.042] '1_M_J1_prime_pu.dat' using 1:2 with linespoints title columnheader, \
+  '2_M_J1_prime_pu.dat' using 1:2 with linespoints title columnheader, \
+  '3_M_J1_prime_pu.dat' using 1:2 with linespoints title columnheader
+
+#PLOT J1p U:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "C_1.x_M.J1p_u_contribution.png"
+plot [0.25:100][0.6:0.61] '1_M_J1_prime_u.dat' using 1:2 with linespoints title columnheader, \
+  '2_M_J1_prime_u.dat' using 1:2 with linespoints title columnheader, \
+  '3_M_J1_prime_u.dat' using 1:2 with linespoints title columnheader
