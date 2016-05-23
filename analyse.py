@@ -236,8 +236,8 @@ def main():
   build_contrib('J1_second', read_data('data/EG29_Case.1.', '', 'PWR_fabrication', 'J1_second_stored', method_r ), 0.001/0.9*0.3/1.5, method )
   build_contrib('J1_prime', read_data('data/eg29_case.1.', 'PWR_separation', '', 'J1_prime', method_r ), 0.001/0.9*0.3/1.5, method )
 
-  method_r = [ '', '_M', '_MLP', '_MLP-STD' ]
-  method = [ 'W', 'M', 'MLP', 'MLP-STD' ]
+  method_r = [ '', '_M', '_MLP', '_MLP-STD', '_MLP-STD-2'  ]
+  method = [ 'W', 'M', 'MLP', 'MLP-STD', 'MLP-STD-2' ]
   build_contrib('MOX_fuel', read_data('data/EG29_Case.1.', 'PWR_fabrication', '', 'PWR_MOX_new', method_r ), 0.001/0.9*0.3/1.5, method )
   
   build_contrib('LWR_OUT', read_data('data/EG29_Case.1.', '', 'PWR_cooling', 'PWR_MOX_spent', method_r ), 0.001/0.9*0.3/1.5, method )

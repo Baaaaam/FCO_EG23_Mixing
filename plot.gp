@@ -56,7 +56,7 @@ plot [0.25:100][] '1_M_J1_second_u.dat' using 1:2 with linespoints title columnh
   '3_W_J1_second_u.dat' using 1:2 with linespoints title columnheader
 
 #PLOT J1 contribution stograe:
-set key bottom left
+set key top right
 set output "C_1.x.MOX.pu_contribution.png"
 set ylabel "Pu fraction in the LWR MOX fuel [%]"
 plot [0.25:100][] '1_M_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
@@ -66,7 +66,11 @@ plot [0.25:100][] '1_M_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoint
   '2_W_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
   '3_W_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
   '2_MLP_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  '3_MLP_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader
+  '3_MLP_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  '2_MLP-STD_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  '3_MLP-STD_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  '2_MLP-STD-2_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  '3_MLP-STD-2_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader
 
 #PLOT J1 contribution stograe:
 set key center right
@@ -81,7 +85,10 @@ plot [0.25:100][] '1_M_LWR_OUT_pu.dat' using 1:($2/6.58036*100) with linespoints
   '2_MLP_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
   '3_MLP_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
   '2_MLP-STD_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  '3_MLP-STD_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader
+  '3_MLP-STD_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  '2_MLP-STD-2_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  '3_MLP-STD-2_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader
+
 
 
 
@@ -119,8 +126,6 @@ plot [0.25:100][] '2_MLP_LWR_OUT_pu.dat' using 1:3 with linespoints title column
   '2_MLP_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
   '2_MLP_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
   '2_MLP_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-
-
 
 
 set key top left
