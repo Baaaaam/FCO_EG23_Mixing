@@ -94,15 +94,93 @@ plot [0.25:100][] '1_M_LWR_OUT_pu.dat' using 1:($2/6.58036*100) with linespoints
 
 
 #PLOT J1 contribution stograe:
-set key top left
-set output "C_1.3_MLP.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] '3_MLP_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  '3_MLP_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  '3_MLP_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  '3_MLP_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  '3_MLP_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
 
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "C_1.2_M.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '2_M_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+  '2_M_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
+  '2_M_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
+  '2_M_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
+  '2_M_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
+
+set key top left
+set output "C_1.3_M.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '3_M_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+  '3_M_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
+  '3_M_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
+  '3_M_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
+  '3_M_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "C_1.2_M_LWR_OUT.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '2_M_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
+  '2_M_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
+  '2_M_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
+  '2_M_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
+  '2_M_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
+
+
+set key top left
+set output "C_1.3_M_LWR_OUT.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '3_M_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
+  '3_M_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
+  '3_M_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
+  '3_M_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
+  '3_M_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
+###################################################################################
+###################################################################################
+
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "C_1.2_W.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '2_W_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+  '2_W_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
+  '2_W_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
+  '2_W_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
+  '2_W_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
+
+set key top left
+set output "C_1.3_W.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '3_W_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+  '3_W_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
+  '3_W_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
+  '3_W_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
+  '3_W_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "C_1.2_W_LWR_OUT.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '2_W_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
+  '2_W_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
+  '2_W_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
+  '2_W_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
+  '2_W_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
+
+
+set key top left
+set output "C_1.3_W_LWR_OUT.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '3_W_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
+  '3_W_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
+  '3_W_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
+  '3_W_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
+  '3_W_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
+###################################################################################
 
 
 #PLOT J1 contribution stograe:
@@ -115,11 +193,19 @@ plot [0.25:100][] '2_MLP_MOX_fuel_pu.dat' using 1:3 with linespoints title colum
   '2_MLP_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
   '2_MLP_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
 
+set key top left
+set output "C_1.3_MLP.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '3_MLP_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+  '3_MLP_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
+  '3_MLP_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
+  '3_MLP_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
+  '3_MLP_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
 
 
 #PLOT J1 contribution stograe:
 set key top left
-set output "C_1.2_LWR_OUT.MOX.pu_composition.png"
+set output "C_1.2_MLP_LWR_OUT.MOX.pu_composition.png"
 set ylabel "Pu contribution [t/GWey]"
 plot [0.25:100][] '2_MLP_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
   '2_MLP_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
@@ -129,7 +215,7 @@ plot [0.25:100][] '2_MLP_LWR_OUT_pu.dat' using 1:3 with linespoints title column
 
 
 set key top left
-set output "C_1.3_LWR_OUT.MOX.pu_composition.png"
+set output "C_1.3_MLP_LWR_OUT.MOX.pu_composition.png"
 set ylabel "Pu contribution [t/GWey]"
 plot [0.25:100][] '3_MLP_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
   '3_MLP_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
@@ -138,6 +224,92 @@ plot [0.25:100][] '3_MLP_LWR_OUT_pu.dat' using 1:3 with linespoints title column
   '3_MLP_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
 ###################################################################################
 ###################################################################################
+
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "C_1.2_MLP-STD.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '2_MLP-STD_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+  '2_MLP-STD_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
+  '2_MLP-STD_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
+  '2_MLP-STD_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
+  '2_MLP-STD_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
+
+set key top left
+set output "C_1.3_MLP-STD.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '3_MLP-STD_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+  '3_MLP-STD_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
+  '3_MLP-STD_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
+  '3_MLP-STD_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
+  '3_MLP-STD_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "C_1.2_MLP-STD_LWR_OUT.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '2_MLP-STD_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
+  '2_MLP-STD_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
+  '2_MLP-STD_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
+  '2_MLP-STD_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
+  '2_MLP-STD_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
+
+
+set key top left
+set output "C_1.3_MLP-STD_LWR_OUT.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '3_MLP-STD_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
+  '3_MLP-STD_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
+  '3_MLP-STD_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
+  '3_MLP-STD_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
+  '3_MLP-STD_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
+###################################################################################
+###################################################################################
+
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "C_1.2_MLP-STD-2.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '2_MLP-STD-2_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+  '2_MLP-STD-2_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
+  '2_MLP-STD-2_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
+  '2_MLP-STD-2_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
+  '2_MLP-STD-2_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
+
+set key top left
+set output "C_1.3_MLP-STD-2.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '3_MLP-STD-2_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+  '3_MLP-STD-2_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
+  '3_MLP-STD-2_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
+  '3_MLP-STD-2_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
+  '3_MLP-STD-2_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "C_1.2_MLP-STD-2_LWR_OUT.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '2_MLP-STD-2_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
+  '2_MLP-STD-2_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
+  '2_MLP-STD-2_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
+  '2_MLP-STD-2_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
+  '2_MLP-STD-2_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
+
+
+set key top left
+set output "C_1.3_MLP-STD-2_LWR_OUT.MOX.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] '3_MLP-STD-2_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
+  '3_MLP-STD-2_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
+  '3_MLP-STD-2_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
+  '3_MLP-STD-2_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
+  '3_MLP-STD-2_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
 ###################################################################################
 
 
