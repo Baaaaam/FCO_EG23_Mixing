@@ -95,6 +95,15 @@ plot [0.25:100][] 'processed_data/1_M_LWR_OUT_pu.dat' using 1:($2/6.58036*100) w
 
 #PLOT J1 contribution stograe:
 
+#PLOT J1 contribution stograe:
+set key top left
+set output "plots/C_1.3_MLP-STD-2.J1_STR.pu_composition.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
+  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
+  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
+  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
+  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
 
 
 #PLOT J1 contribution stograe:

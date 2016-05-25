@@ -11,16 +11,30 @@ fi
 cd tmp
 
 git checkout ${BASE}_${CASE}
-#rm cyclus.sqlite; cyclus main.xml
+rm cyclus.sqlite; cyclus main.xml
+
 cyan -db cyclus.sqlite trans > ${BASE}_${CASE_}.trans
+cyan -db cyclus.sqlite trans -nucs=238Pu > ${BASE}_${CASE_}.trans.pu8
 cyan -db cyclus.sqlite trans -nucs=239Pu > ${BASE}_${CASE_}.trans.pu9
+cyan -db cyclus.sqlite trans -nucs=240Pu > ${BASE}_${CASE_}.trans.pu10
+cyan -db cyclus.sqlite trans -nucs=241Pu > ${BASE}_${CASE_}.trans.pu11
+cyan -db cyclus.sqlite trans -nucs=242Pu > ${BASE}_${CASE_}.trans.pu12
 cyan -db cyclus.sqlite trans -nucs=238Pu,239Pu,240Pu,241Pu,242Pu > ${BASE}_${CASE_}.trans.pu
+cyan -db cyclus.sqlite trans -nucs=235U > ${BASE}_${CASE_}.trans.u5
 cyan -db cyclus.sqlite trans -nucs=238U > ${BASE}_${CASE_}.trans.u8
 cyan -db cyclus.sqlite trans -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}.trans.u
 
+cyan -db cyclus.sqlite inv > ${BASE}_${CASE_}.inv
+cyan -db cyclus.sqlite inv -nucs=238Pu > ${BASE}_${CASE_}.inv.pu8
+cyan -db cyclus.sqlite inv -nucs=239Pu > ${BASE}_${CASE_}.inv.pu9
+cyan -db cyclus.sqlite inv -nucs=240Pu > ${BASE}_${CASE_}.inv.pu10
+cyan -db cyclus.sqlite inv -nucs=241Pu > ${BASE}_${CASE_}.inv.pu11
+cyan -db cyclus.sqlite inv -nucs=242Pu > ${BASE}_${CASE_}.inv.pu12
+cyan -db cyclus.sqlite inv -nucs=238Pu,239Pu,240Pu,241Pu,242Pu > ${BASE}_${CASE_}.inv.pu
+cyan -db cyclus.sqlite inv -nucs=235U > ${BASE}_${CASE_}.inv.u5
+cyan -db cyclus.sqlite inv -nucs=238U > ${BASE}_${CASE_}.inv.u8
+cyan -db cyclus.sqlite inv -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}.inv.u
 
-cyan -db cyclus.sqlite inv J1_second_storage_pu > ${BASE}_${CASE_}.inv
-cyan -db cyclus.sqlite inv J1_second_storage_pu -nucs=239Pu > ${BASE}_${CASE_}.inv.pu9
-cyan -db cyclus.sqlite inv J1_second_storage_pu -nucs=238Pu,239Pu,240Pu,241Pu,242Pu > ${BASE}_${CASE_}.inv.pu
-cyan -db cyclus.sqlite inv J1_second_storage_pu -nucs=238U > ${BASE}_${CASE_}.inv.u8
-cyan -db cyclus.sqlite inv J1_second_storage_pu -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}.inv.u
+
+mv EG29_Case*trans* /Users/mouginot/work/FCO/EG29/FCO_EG29_Mixing/data
+mv EG29_Case*inv* /Users/mouginot/work/FCO/EG29/FCO_EG29_Mixing/data
