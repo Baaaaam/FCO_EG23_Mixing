@@ -223,10 +223,10 @@ def main():
   build_contrib('J1_STR', read_inv('data/EG29_Case.1.', method_r ), 0.001/0.9*0.3/1.5, method )
 
 
-  method_r = [ '_LII_10_', '_LII_50_', '_LII_100_'  ]
-  method = [ 'W-LII-10', 'W-LII-50', 'W-LII-100' ]
+  method_r = [ '_', '_LII_x2_', '_LII_x5_', '_LII_x10_'  ]
+  method = [ 'W', 'W-LII-x2', 'W-LII-x5', 'W-LII-x10' ]
   build_contrib('MOX_fuel', read_transaction('data/EG29_Case.1.', 'PWR_fabrication', '', 'PWR_MOX_new', method_r ), 0.001/0.9*0.3/1.5, method )
   build_contrib('E3_second', read_transaction('data/EG29_Case.1.', '', 'PWR_fabrication', 'E3_second_stored', method_r ), 0.001/0.9*0.3/1.5, method )
   build_contrib('J1_second', read_transaction('data/EG29_Case.1.', '', 'PWR_fabrication', 'J1_second_stored', method_r ), 0.001/0.9*0.3/1.5, method )
-  build_contrib('J1_STR', read_inv('data/EG29_Case.1.', method_r ), 0.001/0.9*0.3/1.5, method )
+  build_contrib('J1_STR', read_inv('data/EG29_Case.1.', method_r ), 0.001, method )
 main()

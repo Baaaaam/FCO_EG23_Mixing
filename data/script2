@@ -198,3 +198,136 @@ cp EG29_Case.1.3_LII_100_.trans.pu9  EG29_Case.1.2_LII_100_.trans.pu9
 cp EG29_Case.1.3_LII_100_.trans.u    EG29_Case.1.2_LII_100_.trans.u
 cp EG29_Case.1.3_LII_100_.trans.u5   EG29_Case.1.2_LII_100_.trans.u5
 cp EG29_Case.1.3_LII_100_.trans.u8   EG29_Case.1.2_LII_100_.trans.u8
+
+
+cp EG29_Case.1.3_LII_x2_.trans      EG29_Case.1.1_LII_x2_.trans
+cp EG29_Case.1.3_LII_x2_.trans.pu   EG29_Case.1.1_LII_x2_.trans.pu
+cp EG29_Case.1.3_LII_x2_.trans.pu10 EG29_Case.1.1_LII_x2_.trans.pu10
+cp EG29_Case.1.3_LII_x2_.trans.pu11 EG29_Case.1.1_LII_x2_.trans.pu11
+cp EG29_Case.1.3_LII_x2_.trans.pu12 EG29_Case.1.1_LII_x2_.trans.pu12
+cp EG29_Case.1.3_LII_x2_.trans.pu8  EG29_Case.1.1_LII_x2_.trans.pu8
+cp EG29_Case.1.3_LII_x2_.trans.pu9  EG29_Case.1.1_LII_x2_.trans.pu9
+cp EG29_Case.1.3_LII_x2_.trans.u    EG29_Case.1.1_LII_x2_.trans.u
+cp EG29_Case.1.3_LII_x2_.trans.u5   EG29_Case.1.1_LII_x2_.trans.u5
+cp EG29_Case.1.3_LII_x2_.trans.u8   EG29_Case.1.1_LII_x2_.trans.u8
+
+cp EG29_Case.1.3_LII_x2_.trans      EG29_Case.1.2_LII_x2_.trans
+cp EG29_Case.1.3_LII_x2_.trans.pu   EG29_Case.1.2_LII_x2_.trans.pu
+cp EG29_Case.1.3_LII_x2_.trans.pu10 EG29_Case.1.2_LII_x2_.trans.pu10
+cp EG29_Case.1.3_LII_x2_.trans.pu11 EG29_Case.1.2_LII_x2_.trans.pu11
+cp EG29_Case.1.3_LII_x2_.trans.pu12 EG29_Case.1.2_LII_x2_.trans.pu12
+cp EG29_Case.1.3_LII_x2_.trans.pu8  EG29_Case.1.2_LII_x2_.trans.pu8
+cp EG29_Case.1.3_LII_x2_.trans.pu9  EG29_Case.1.2_LII_x2_.trans.pu9
+cp EG29_Case.1.3_LII_x2_.trans.u    EG29_Case.1.2_LII_x2_.trans.u
+cp EG29_Case.1.3_LII_x2_.trans.u5   EG29_Case.1.2_LII_x2_.trans.u5
+cp EG29_Case.1.3_LII_x2_.trans.u8   EG29_Case.1.2_LII_x2_.trans.u8
+
+cp EG29_Case.1.3_LII_x5_.trans      EG29_Case.1.1_LII_x5_.trans
+cp EG29_Case.1.3_LII_x5_.trans.pu   EG29_Case.1.1_LII_x5_.trans.pu
+cp EG29_Case.1.3_LII_x5_.trans.pu10 EG29_Case.1.1_LII_x5_.trans.pu10
+cp EG29_Case.1.3_LII_x5_.trans.pu11 EG29_Case.1.1_LII_x5_.trans.pu11
+cp EG29_Case.1.3_LII_x5_.trans.pu12 EG29_Case.1.1_LII_x5_.trans.pu12
+cp EG29_Case.1.3_LII_x5_.trans.pu8  EG29_Case.1.1_LII_x5_.trans.pu8
+cp EG29_Case.1.3_LII_x5_.trans.pu9  EG29_Case.1.1_LII_x5_.trans.pu9
+cp EG29_Case.1.3_LII_x5_.trans.u    EG29_Case.1.1_LII_x5_.trans.u
+cp EG29_Case.1.3_LII_x5_.trans.u5   EG29_Case.1.1_LII_x5_.trans.u5
+cp EG29_Case.1.3_LII_x5_.trans.u8   EG29_Case.1.1_LII_x5_.trans.u8
+
+cp EG29_Case.1.3_LII_x5_.trans      EG29_Case.1.2_LII_x5_.trans
+cp EG29_Case.1.3_LII_x5_.trans.pu   EG29_Case.1.2_LII_x5_.trans.pu
+cp EG29_Case.1.3_LII_x5_.trans.pu10 EG29_Case.1.2_LII_x5_.trans.pu10
+cp EG29_Case.1.3_LII_x5_.trans.pu11 EG29_Case.1.2_LII_x5_.trans.pu11
+cp EG29_Case.1.3_LII_x5_.trans.pu12 EG29_Case.1.2_LII_x5_.trans.pu12
+cp EG29_Case.1.3_LII_x5_.trans.pu8  EG29_Case.1.2_LII_x5_.trans.pu8
+cp EG29_Case.1.3_LII_x5_.trans.pu9  EG29_Case.1.2_LII_x5_.trans.pu9
+cp EG29_Case.1.3_LII_x5_.trans.u    EG29_Case.1.2_LII_x5_.trans.u
+cp EG29_Case.1.3_LII_x5_.trans.u5   EG29_Case.1.2_LII_x5_.trans.u5
+cp EG29_Case.1.3_LII_x5_.trans.u8   EG29_Case.1.2_LII_x5_.trans.u8
+
+cp EG29_Case.1.3_LII_x10_.trans      EG29_Case.1.1_LII_x10_.trans
+cp EG29_Case.1.3_LII_x10_.trans.pu   EG29_Case.1.1_LII_x10_.trans.pu
+cp EG29_Case.1.3_LII_x10_.trans.pu10 EG29_Case.1.1_LII_x10_.trans.pu10
+cp EG29_Case.1.3_LII_x10_.trans.pu11 EG29_Case.1.1_LII_x10_.trans.pu11
+cp EG29_Case.1.3_LII_x10_.trans.pu12 EG29_Case.1.1_LII_x10_.trans.pu12
+cp EG29_Case.1.3_LII_x10_.trans.pu8  EG29_Case.1.1_LII_x10_.trans.pu8
+cp EG29_Case.1.3_LII_x10_.trans.pu9  EG29_Case.1.1_LII_x10_.trans.pu9
+cp EG29_Case.1.3_LII_x10_.trans.u    EG29_Case.1.1_LII_x10_.trans.u
+cp EG29_Case.1.3_LII_x10_.trans.u5   EG29_Case.1.1_LII_x10_.trans.u5
+cp EG29_Case.1.3_LII_x10_.trans.u8   EG29_Case.1.1_LII_x10_.trans.u8
+
+cp EG29_Case.1.3_LII_x10_.trans      EG29_Case.1.2_LII_x10_.trans
+cp EG29_Case.1.3_LII_x10_.trans.pu   EG29_Case.1.2_LII_x10_.trans.pu
+cp EG29_Case.1.3_LII_x10_.trans.pu10 EG29_Case.1.2_LII_x10_.trans.pu10
+cp EG29_Case.1.3_LII_x10_.trans.pu11 EG29_Case.1.2_LII_x10_.trans.pu11
+cp EG29_Case.1.3_LII_x10_.trans.pu12 EG29_Case.1.2_LII_x10_.trans.pu12
+cp EG29_Case.1.3_LII_x10_.trans.pu8  EG29_Case.1.2_LII_x10_.trans.pu8
+cp EG29_Case.1.3_LII_x10_.trans.pu9  EG29_Case.1.2_LII_x10_.trans.pu9
+cp EG29_Case.1.3_LII_x10_.trans.u    EG29_Case.1.2_LII_x10_.trans.u
+cp EG29_Case.1.3_LII_x10_.trans.u5   EG29_Case.1.2_LII_x10_.trans.u5
+cp EG29_Case.1.3_LII_x10_.trans.u8   EG29_Case.1.2_LII_x10_.trans.u8
+
+cp EG29_Case.1.3_LII_x2_.inv      EG29_Case.1.1_LII_x2_.inv
+cp EG29_Case.1.3_LII_x2_.inv.pu   EG29_Case.1.1_LII_x2_.inv.pu
+cp EG29_Case.1.3_LII_x2_.inv.pu10 EG29_Case.1.1_LII_x2_.inv.pu10
+cp EG29_Case.1.3_LII_x2_.inv.pu11 EG29_Case.1.1_LII_x2_.inv.pu11
+cp EG29_Case.1.3_LII_x2_.inv.pu12 EG29_Case.1.1_LII_x2_.inv.pu12
+cp EG29_Case.1.3_LII_x2_.inv.pu8  EG29_Case.1.1_LII_x2_.inv.pu8
+cp EG29_Case.1.3_LII_x2_.inv.pu9  EG29_Case.1.1_LII_x2_.inv.pu9
+cp EG29_Case.1.3_LII_x2_.inv.u    EG29_Case.1.1_LII_x2_.inv.u
+cp EG29_Case.1.3_LII_x2_.inv.u5   EG29_Case.1.1_LII_x2_.inv.u5
+cp EG29_Case.1.3_LII_x2_.inv.u8   EG29_Case.1.1_LII_x2_.inv.u8
+
+cp EG29_Case.1.3_LII_x2_.inv      EG29_Case.1.2_LII_x2_.inv
+cp EG29_Case.1.3_LII_x2_.inv.pu   EG29_Case.1.2_LII_x2_.inv.pu
+cp EG29_Case.1.3_LII_x2_.inv.pu10 EG29_Case.1.2_LII_x2_.inv.pu10
+cp EG29_Case.1.3_LII_x2_.inv.pu11 EG29_Case.1.2_LII_x2_.inv.pu11
+cp EG29_Case.1.3_LII_x2_.inv.pu12 EG29_Case.1.2_LII_x2_.inv.pu12
+cp EG29_Case.1.3_LII_x2_.inv.pu8  EG29_Case.1.2_LII_x2_.inv.pu8
+cp EG29_Case.1.3_LII_x2_.inv.pu9  EG29_Case.1.2_LII_x2_.inv.pu9
+cp EG29_Case.1.3_LII_x2_.inv.u    EG29_Case.1.2_LII_x2_.inv.u
+cp EG29_Case.1.3_LII_x2_.inv.u5   EG29_Case.1.2_LII_x2_.inv.u5
+cp EG29_Case.1.3_LII_x2_.inv.u8   EG29_Case.1.2_LII_x2_.inv.u8
+
+cp EG29_Case.1.3_LII_x5_.inv      EG29_Case.1.1_LII_x5_.inv
+cp EG29_Case.1.3_LII_x5_.inv.pu   EG29_Case.1.1_LII_x5_.inv.pu
+cp EG29_Case.1.3_LII_x5_.inv.pu10 EG29_Case.1.1_LII_x5_.inv.pu10
+cp EG29_Case.1.3_LII_x5_.inv.pu11 EG29_Case.1.1_LII_x5_.inv.pu11
+cp EG29_Case.1.3_LII_x5_.inv.pu12 EG29_Case.1.1_LII_x5_.inv.pu12
+cp EG29_Case.1.3_LII_x5_.inv.pu8  EG29_Case.1.1_LII_x5_.inv.pu8
+cp EG29_Case.1.3_LII_x5_.inv.pu9  EG29_Case.1.1_LII_x5_.inv.pu9
+cp EG29_Case.1.3_LII_x5_.inv.u    EG29_Case.1.1_LII_x5_.inv.u
+cp EG29_Case.1.3_LII_x5_.inv.u5   EG29_Case.1.1_LII_x5_.inv.u5
+cp EG29_Case.1.3_LII_x5_.inv.u8   EG29_Case.1.1_LII_x5_.inv.u8
+
+cp EG29_Case.1.3_LII_x5_.inv      EG29_Case.1.2_LII_x5_.inv
+cp EG29_Case.1.3_LII_x5_.inv.pu   EG29_Case.1.2_LII_x5_.inv.pu
+cp EG29_Case.1.3_LII_x5_.inv.pu10 EG29_Case.1.2_LII_x5_.inv.pu10
+cp EG29_Case.1.3_LII_x5_.inv.pu11 EG29_Case.1.2_LII_x5_.inv.pu11
+cp EG29_Case.1.3_LII_x5_.inv.pu12 EG29_Case.1.2_LII_x5_.inv.pu12
+cp EG29_Case.1.3_LII_x5_.inv.pu8  EG29_Case.1.2_LII_x5_.inv.pu8
+cp EG29_Case.1.3_LII_x5_.inv.pu9  EG29_Case.1.2_LII_x5_.inv.pu9
+cp EG29_Case.1.3_LII_x5_.inv.u    EG29_Case.1.2_LII_x5_.inv.u
+cp EG29_Case.1.3_LII_x5_.inv.u5   EG29_Case.1.2_LII_x5_.inv.u5
+cp EG29_Case.1.3_LII_x5_.inv.u8   EG29_Case.1.2_LII_x5_.inv.u8
+
+cp EG29_Case.1.3_LII_x10_.inv      EG29_Case.1.1_LII_x10_.inv
+cp EG29_Case.1.3_LII_x10_.inv.pu   EG29_Case.1.1_LII_x10_.inv.pu
+cp EG29_Case.1.3_LII_x10_.inv.pu10 EG29_Case.1.1_LII_x10_.inv.pu10
+cp EG29_Case.1.3_LII_x10_.inv.pu11 EG29_Case.1.1_LII_x10_.inv.pu11
+cp EG29_Case.1.3_LII_x10_.inv.pu12 EG29_Case.1.1_LII_x10_.inv.pu12
+cp EG29_Case.1.3_LII_x10_.inv.pu8  EG29_Case.1.1_LII_x10_.inv.pu8
+cp EG29_Case.1.3_LII_x10_.inv.pu9  EG29_Case.1.1_LII_x10_.inv.pu9
+cp EG29_Case.1.3_LII_x10_.inv.u    EG29_Case.1.1_LII_x10_.inv.u
+cp EG29_Case.1.3_LII_x10_.inv.u5   EG29_Case.1.1_LII_x10_.inv.u5
+cp EG29_Case.1.3_LII_x10_.inv.u8   EG29_Case.1.1_LII_x10_.inv.u8
+
+cp EG29_Case.1.3_LII_x10_.inv      EG29_Case.1.2_LII_x10_.inv
+cp EG29_Case.1.3_LII_x10_.inv.pu   EG29_Case.1.2_LII_x10_.inv.pu
+cp EG29_Case.1.3_LII_x10_.inv.pu10 EG29_Case.1.2_LII_x10_.inv.pu10
+cp EG29_Case.1.3_LII_x10_.inv.pu11 EG29_Case.1.2_LII_x10_.inv.pu11
+cp EG29_Case.1.3_LII_x10_.inv.pu12 EG29_Case.1.2_LII_x10_.inv.pu12
+cp EG29_Case.1.3_LII_x10_.inv.pu8  EG29_Case.1.2_LII_x10_.inv.pu8
+cp EG29_Case.1.3_LII_x10_.inv.pu9  EG29_Case.1.2_LII_x10_.inv.pu9
+cp EG29_Case.1.3_LII_x10_.inv.u    EG29_Case.1.2_LII_x10_.inv.u
+cp EG29_Case.1.3_LII_x10_.inv.u5   EG29_Case.1.2_LII_x10_.inv.u5
+cp EG29_Case.1.3_LII_x10_.inv.u8   EG29_Case.1.2_LII_x10_.inv.u8

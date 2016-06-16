@@ -236,7 +236,7 @@ plot [0.25:100][] 'processed_data/2_MLP-STD_MOX_fuel_pu.dat' using 1:3 with line
 set key top left
 set output "plots/C_1.3_MLP-STD.MOX.pu_composition.png"
 set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+plot [0.25:200][] 'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
   'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
   'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
   'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
@@ -280,7 +280,7 @@ plot [0.25:100][] 'processed_data/2_MLP-STD-2_MOX_fuel_pu.dat' using 1:3 with li
 set key top left
 set output "plots/C_1.3_MLP-STD-2.MOX.pu_composition.png"
 set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
+plot [0.25:200][] 'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
   'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
   'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
   'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
@@ -440,30 +440,81 @@ set key top left
 set output "plots/C_1.3_W_LII.pu_contribution.png"
 set ylabel "Pu contribution [t/GWey]"
 plot [0.25:100][] 'processed_data/3_W_MOX_fuel_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-10_MOX_fuel_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-50_MOX_fuel_pu.dat'  using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-100_MOX_fuel_pu.dat' using 1:2 with linespoints title columnheader
+  'processed_data/3_W-LII-x2_MOX_fuel_pu.dat' using 1:2 with linespoints title columnheader, \
+  'processed_data/3_W-LII-x5_MOX_fuel_pu.dat'  using 1:2 with linespoints title columnheader, \
+  'processed_data/3_W-LII-x10_MOX_fuel_pu.dat' using 1:2 with linespoints title columnheader
 ###################################################################################
 set key top left
 set output "plots/C_1.3_W_LII.J1s.png"
 set ylabel "Pu contribution [t/GWey]"
 plot [0.25:100][] 'processed_data/3_W_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-10_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-50_J1_second_pu.dat'  using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-100_J1_second_pu.dat' using 1:2 with linespoints title columnheader
+  'processed_data/3_W-LII-x2_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
+  'processed_data/3_W-LII-x5_J1_second_pu.dat'  using 1:2 with linespoints title columnheader, \
+  'processed_data/3_W-LII-x10_J1_second_pu.dat' using 1:2 with linespoints title columnheader
 ###################################################################################
 set key top left
 set output "plots/C_1.3_W_LII.E3_s.png"
 set ylabel "Pu contribution [t/GWey]"
 plot [0.25:100][] 'processed_data/3_W_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-10_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-50_E3_second_pu.dat'  using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-100_E3_second_pu.dat' using 1:2 with linespoints title columnheader
+  'processed_data/3_W-LII-x2_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
+  'processed_data/3_W-LII-x5_E3_second_pu.dat'  using 1:2 with linespoints title columnheader, \
+  'processed_data/3_W-LII-x10_E3_second_pu.dat' using 1:2 with linespoints title columnheader
 ###################################################################################
 set key top left
 set output "plots/C_1.3_W_LII.STR.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_W-LII-10_J1_STR_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-50_J1_STR_pu.dat'  using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W-LII-100_J1_STR_pu.dat' using 1:2 with linespoints title columnheader
+set ylabel "Pu contribution [t]"
+plot [0.25:100][] 'processed_data/3_W_J1_STR_pu.dat' using 1:2 with linespoints title columnheader, \
+  'processed_data/3_W-LII-x2_J1_STR_pu.dat' using 1:2 with linespoints title columnheader, \
+  'processed_data/3_W-LII-x5_J1_STR_pu.dat'  using 1:2 with linespoints title columnheader, \
+  'processed_data/3_W-LII-x10_J1_STR_pu.dat' using 1:2 with linespoints title columnheader
 ###################################################################################
+
+
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "plots/C_1.2.MOX.pu_contribution.png"
+set ylabel "Pu fraction in the LWR MOX fuel [%]"
+plot [0.25:100][] 'processed_data/2_M_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
+  'processed_data/2_W_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
+  'processed_data/2_MLP_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  'processed_data/2_MLP-STD_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  'processed_data/2_MLP-STD-2_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader
+
+
+
+
+#PLOT J1 contribution stograe:
+set key bottom left
+set output "plots/C_1.2.MOX.pu_burned.png"
+set ylabel "Pu fraction burned during of the irradiation [%]"
+plot [0.25:100][] '< paste processed_data/2_M_MOX_fuel_pu.dat processed_data/2_M_LWR_OUT_pu.dat' using 1:(($2-$9)/6.58036*100) with linespoints title columnheader, \
+  '< paste processed_data/2_W_MOX_fuel_pu.dat processed_data/2_W_LWR_OUT_pu.dat'  using 1:(($2-$9)/6.58036*100) with linespoints title columnheader, \
+  '< paste processed_data/2_MLP_MOX_fuel_pu.dat processed_data/2_MLP_LWR_OUT_pu.dat' using 1:(($2-$9)*18/54/6.58036*100) with linespoints title columnheader, \
+  '< paste processed_data/2_MLP-STD_MOX_fuel_pu.dat processed_data/2_MLP-STD_LWR_OUT_pu.dat' using 1:(($2-$9)*18/54/6.58036*100) with linespoints title columnheader, \
+  '< paste processed_data/2_MLP-STD-2_MOX_fuel_pu.dat processed_data/2_MLP-STD-2_LWR_OUT_pu.dat' using 1:(($2-$9)*18/54/6.58036*100) with linespoints title columnheader
+
+
+#PLOT J1 contribution stograe:
+set key top left
+set output "plots/C_1.3.MOX.pu_contribution.png"
+set ylabel "Pu fraction in the LWR MOX fuel [%]"
+plot [0.25:200][] 'processed_data/3_M_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
+  'processed_data/3_W_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
+  'processed_data/3_MLP_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
+  'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader
+
+
+
+
+#PLOT J1 contribution stograe:
+set key bottom left
+set output "plots/C_1.3.MOX.pu_burned.png"
+set ylabel "Pu fraction burned during of the irradiation [%]"
+plot [0.25:200][] '< paste processed_data/3_M_MOX_fuel_pu.dat processed_data/3_M_LWR_OUT_pu.dat' using 1:(($2-$9)/6.58036*100) with linespoints title columnheader, \
+  '< paste processed_data/3_W_MOX_fuel_pu.dat processed_data/3_W_LWR_OUT_pu.dat'  using 1:(($2-$9)/6.58036*100) with linespoints title columnheader, \
+  '< paste processed_data/3_MLP_MOX_fuel_pu.dat processed_data/3_MLP_LWR_OUT_pu.dat' using 1:(($2-$9)*18/54/6.58036*100) with linespoints title columnheader, \
+  '< paste processed_data/3_MLP-STD_MOX_fuel_pu.dat processed_data/3_MLP-STD_LWR_OUT_pu.dat' using 1:(($2-$9)*18/54/6.58036*100) with linespoints title columnheader, \
+  '< paste processed_data/3_MLP-STD-2_MOX_fuel_pu.dat processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:(($2-$9)*18/54/6.58036*100) with linespoints title columnheader

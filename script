@@ -1,16 +1,19 @@
 #!/bin/zsh
 source ~/.zshrc
 
-#./dat_gene EG29_Case.1.1 MF
-#./dat_gene EG29_Case.1.2 MF
-#./dat_gene EG29_Case.1.3 MF 
+#./dat_gene_W_M EG29_Case.1.1 MF
+#./dat_gene_W_M EG29_Case.1.2 MF
+#./dat_gene_W_M EG29_Case.1.3 MF 
 #
-#./dat_gene EG29_Case.1.1 
-#./dat_gene EG29_Case.1.2 
-#./dat_gene EG29_Case.1.3 
-./dat_gene_W_M EG29_Case.1.3_LII_10 
-./dat_gene_W_M EG29_Case.1.3_LII_50 
-./dat_gene_W_M EG29_Case.1.3_LII_100 
+#./dat_gene_W_M EG29_Case.1.1 
+#./dat_gene_W_M EG29_Case.1.2 
+#./dat_gene_W_M EG29_Case.1.3 
+#./dat_gene_W_M EG29_Case.1.3_LII_10 
+#./dat_gene_W_M EG29_Case.1.3_LII_50 
+#./dat_gene_W_M EG29_Case.1.3_LII_100 
+./dat_gene_W_M EG29_Case.1.3_LII_x2 
+./dat_gene_W_M EG29_Case.1.3_LII_x5 
+./dat_gene_W_M EG29_Case.1.3_LII_x10 
 
 #./dat_gene EG29_Case.1.2 MLP
 #./dat_gene EG29_Case.1.3 MLP

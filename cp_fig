@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+cp plots/C_1.x.E3s_pu_contribution.png  ../FCO_repport/img/C_1_x_E3s_pu_contribution.png
+cp plots/C_1.x.J1s_pu_contribution.png  ../FCO_repport/img/C_1_x_J1s_pu_contribution.png
+
+cp plots/C_1.2.MOX.pu_contribution.png  ../FCO_repport/img/C_1_2_MOX_pu_contribution.png
+#cp plots/C_1.2.MOX.pu_burned.png        ../FCO_repport/img/C_1_2_MOX_pu_burned.png
+#cp plots/C_1.2.MOX.pu_burned.png        ../FCO_repport/img/C_1_2_MOX_pu_burned.png
+cp plots/C_1.3.MOX.pu_contribution.png  ../FCO_repport/img/C_1_3_MOX_pu_contribution.png
+
+
+cp plots/C_1.3_MLP-STD.MOX.pu_composition.png    ../FCO_repport/img/C_1_3_MLP-STD_MOX_pu_composition.png
+cp plots/C_1.3_MLP-STD-2.MOX.pu_composition.png  ../FCO_repport/img/C_1_3_MLP-STD-2_MOX_pu_composition.png
