@@ -10,6 +10,7 @@ if [[ ! (-d ./tmp) ]]; then
 fi
 cd tmp
 
+git fetch origin
 git checkout ${BASE}_${CASE}
 rm cyclus.sqlite; cyclus main.xml
 
@@ -24,17 +25,60 @@ cyan -db cyclus.sqlite trans -nucs=235U > ${BASE}_${CASE_}.trans.u5
 cyan -db cyclus.sqlite trans -nucs=238U > ${BASE}_${CASE_}.trans.u8
 cyan -db cyclus.sqlite trans -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}.trans.u
 
-cyan -db cyclus.sqlite inv > ${BASE}_${CASE_}.inv
-cyan -db cyclus.sqlite inv -nucs=238Pu > ${BASE}_${CASE_}.inv.pu8
-cyan -db cyclus.sqlite inv -nucs=239Pu > ${BASE}_${CASE_}.inv.pu9
-cyan -db cyclus.sqlite inv -nucs=240Pu > ${BASE}_${CASE_}.inv.pu10
-cyan -db cyclus.sqlite inv -nucs=241Pu > ${BASE}_${CASE_}.inv.pu11
-cyan -db cyclus.sqlite inv -nucs=242Pu > ${BASE}_${CASE_}.inv.pu12
-cyan -db cyclus.sqlite inv -nucs=238Pu,239Pu,240Pu,241Pu,242Pu > ${BASE}_${CASE_}.inv.pu
-cyan -db cyclus.sqlite inv -nucs=235U > ${BASE}_${CASE_}.inv.u5
-cyan -db cyclus.sqlite inv -nucs=238U > ${BASE}_${CASE_}.inv.u8
-cyan -db cyclus.sqlite inv -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}.inv.u
+cyan -db cyclus.sqlite inv Storage_E1_second > ${BASE}_${CASE_}_E1.inv
+cyan -db cyclus.sqlite inv Storage_E1_second -nucs=238Pu > ${BASE}_${CASE_}_E1.inv.pu8
+cyan -db cyclus.sqlite inv Storage_E1_second -nucs=239Pu > ${BASE}_${CASE_}_E1.inv.pu9
+cyan -db cyclus.sqlite inv Storage_E1_second -nucs=240Pu > ${BASE}_${CASE_}_E1.inv.pu10
+cyan -db cyclus.sqlite inv Storage_E1_second -nucs=241Pu > ${BASE}_${CASE_}_E1.inv.pu11
+cyan -db cyclus.sqlite inv Storage_E1_second -nucs=242Pu > ${BASE}_${CASE_}_E1.inv.pu12
+cyan -db cyclus.sqlite inv Storage_E1_second -nucs=238Pu,239Pu,240Pu,241Pu,242Pu > ${BASE}_${CASE_}_E1.inv.pu
+cyan -db cyclus.sqlite inv Storage_E1_second -nucs=235U > ${BASE}_${CASE_}_E1.inv.u5
+cyan -db cyclus.sqlite inv Storage_E1_second -nucs=238U > ${BASE}_${CASE_}_E1.inv.u8
+cyan -db cyclus.sqlite inv Storage_E1_second -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}_E1.inv.u
 
+cyan -db cyclus.sqlite inv Storage_E2_second > ${BASE}_${CASE_}_E2.inv
+cyan -db cyclus.sqlite inv Storage_E2_second -nucs=238Pu > ${BASE}_${CASE_}_E2.inv.pu8
+cyan -db cyclus.sqlite inv Storage_E2_second -nucs=239Pu > ${BASE}_${CASE_}_E2.inv.pu9
+cyan -db cyclus.sqlite inv Storage_E2_second -nucs=240Pu > ${BASE}_${CASE_}_E2.inv.pu10
+cyan -db cyclus.sqlite inv Storage_E2_second -nucs=241Pu > ${BASE}_${CASE_}_E2.inv.pu11
+cyan -db cyclus.sqlite inv Storage_E2_second -nucs=242Pu > ${BASE}_${CASE_}_E2.inv.pu12
+cyan -db cyclus.sqlite inv Storage_E2_second -nucs=238Pu,239Pu,240Pu,241Pu,242Pu > ${BASE}_${CASE_}_E2.inv.pu
+cyan -db cyclus.sqlite inv Storage_E2_second -nucs=235U > ${BASE}_${CASE_}_E2.inv.u5
+cyan -db cyclus.sqlite inv Storage_E2_second -nucs=238U > ${BASE}_${CASE_}_E2.inv.u8
+cyan -db cyclus.sqlite inv Storage_E2_second -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}_E2.inv.u
 
-mv EG29_Case*trans* /Users/mouginot/work/FCO/EG29/FCO_EG29_Mixing/data
-mv EG29_Case*inv* /Users/mouginot/work/FCO/EG29/FCO_EG29_Mixing/data
+cyan -db cyclus.sqlite inv Storage_E3_second > ${BASE}_${CASE_}_E3.inv
+cyan -db cyclus.sqlite inv Storage_E3_second -nucs=238Pu > ${BASE}_${CASE_}_E3.inv.pu8
+cyan -db cyclus.sqlite inv Storage_E3_second -nucs=239Pu > ${BASE}_${CASE_}_E3.inv.pu9
+cyan -db cyclus.sqlite inv Storage_E3_second -nucs=240Pu > ${BASE}_${CASE_}_E3.inv.pu10
+cyan -db cyclus.sqlite inv Storage_E3_second -nucs=241Pu > ${BASE}_${CASE_}_E3.inv.pu11
+cyan -db cyclus.sqlite inv Storage_E3_second -nucs=242Pu > ${BASE}_${CASE_}_E3.inv.pu12
+cyan -db cyclus.sqlite inv Storage_E3_second -nucs=238Pu,239Pu,240Pu,241Pu,242Pu > ${BASE}_${CASE_}_E3.inv.pu
+cyan -db cyclus.sqlite inv Storage_E3_second -nucs=235U > ${BASE}_${CASE_}_E3.inv.u5
+cyan -db cyclus.sqlite inv Storage_E3_second -nucs=238U > ${BASE}_${CASE_}_E3.inv.u8
+cyan -db cyclus.sqlite inv Storage_E3_second -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}_E3.inv.u
+
+cyan -db cyclus.sqlite inv Storage_E4_second > ${BASE}_${CASE_}_E4.inv
+cyan -db cyclus.sqlite inv Storage_E4 -nucs=238Pu > ${BASE}_${CASE_}_E4.inv.pu8
+cyan -db cyclus.sqlite inv Storage_E4 -nucs=239Pu > ${BASE}_${CASE_}_E4.inv.pu9
+cyan -db cyclus.sqlite inv Storage_E4 -nucs=240Pu > ${BASE}_${CASE_}_E4.inv.pu10
+cyan -db cyclus.sqlite inv Storage_E4 -nucs=241Pu > ${BASE}_${CASE_}_E4.inv.pu11
+cyan -db cyclus.sqlite inv Storage_E4 -nucs=242Pu > ${BASE}_${CASE_}_E4.inv.pu12
+cyan -db cyclus.sqlite inv Storage_E4 -nucs=238Pu,239Pu,240Pu,241Pu,242Pu > ${BASE}_${CASE_}_E4.inv.pu
+cyan -db cyclus.sqlite inv Storage_E4 -nucs=235U > ${BASE}_${CASE_}_E4.inv.u5
+cyan -db cyclus.sqlite inv Storage_E4 -nucs=238U > ${BASE}_${CASE_}_E4.inv.u8
+cyan -db cyclus.sqlite inv Storage_E4 -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}_E4.inv.u
+
+cyan -db cyclus.sqlite inv Storage_J1_second > ${BASE}_${CASE_}_J1.inv
+cyan -db cyclus.sqlite inv Storage_J1_second -nucs=238Pu > ${BASE}_${CASE_}_J1.inv.pu8
+cyan -db cyclus.sqlite inv Storage_J1_second -nucs=239Pu > ${BASE}_${CASE_}_J1.inv.pu9
+cyan -db cyclus.sqlite inv Storage_J1_second -nucs=240Pu > ${BASE}_${CASE_}_J1.inv.pu10
+cyan -db cyclus.sqlite inv Storage_J1_second -nucs=241Pu > ${BASE}_${CASE_}_J1.inv.pu11
+cyan -db cyclus.sqlite inv Storage_J1_second -nucs=242Pu > ${BASE}_${CASE_}_J1.inv.pu12
+cyan -db cyclus.sqlite inv Storage_J1_second -nucs=238Pu,239Pu,240Pu,241Pu,242Pu > ${BASE}_${CASE_}_J1.inv.pu
+cyan -db cyclus.sqlite inv Storage_J1_second -nucs=235U > ${BASE}_${CASE_}_J1.inv.u5
+cyan -db cyclus.sqlite inv Storage_J1_second -nucs=238U > ${BASE}_${CASE_}_J1.inv.u8
+cyan -db cyclus.sqlite inv Storage_J1_second -nucs=233u,234u,235u,236u,237u,238u > ${BASE}_${CASE_}_J1.inv.u
+
+mv *${BASE}_${CASE_}*trans* ../data
+mv *${BASE}_${CASE_}*inv* ../data

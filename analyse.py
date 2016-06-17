@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import numpy as np
+import math
 
 def readfile_transaction(filename, out_fac, in_fac, commod):
   my_file = open(filename, 'r')
@@ -116,7 +117,8 @@ def build_contrib(name,contrib,factor, method):
     total_u.append(case[-1][0])
     for i in range( len(total_u[-1]) ):
       total_u[-1][i][1] *= factor
-    
+
+      
   filename = name + '_pu.dat'
   print_data_inv( 'pu', filename, total_pu, pu_contrib_relativ, method)
   
@@ -204,21 +206,25 @@ def print_data_inv(nuclide,filename,total,isotopic, method):
 
 def main():
 
-  method_r = [ '', '_M' ]
-  method = [ 'W', 'M' ]
-  #build_contrib('E3_second', read_transaction('data/EG29_Case.1.', '', 'PWR_fabrication', 'E3_second_stored', method_r ), 0.001/0.9*0.3/1.5, method )
-  #build_contrib('J1_second', read_transaction('data/EG29_Case.1.', '', 'PWR_fabrication', 'J1_second_stored', method_r ), 0.001/0.9*0.3/1.5, method )
-  #build_contrib('J1_prime', read_transaction('data/eg29_case.1.', 'PWR_separation', '', 'J1_prime', method_r ), 0.001/0.9*0.3/1.5, method )
-
-#  method_r = [ '', '_M', '_MLP', '_MLP-STD', '_MLP-STD-2'  ]
-#  method = [ 'W', 'M', 'MLP', 'MLP-STD', 'MLP-STD-2' ]
-  method_r = [ '_MLP-STD-2'  ]
-  method = [ 'MLP-STD-2' ]
-  build_contrib('MOX_fuel', read_transaction('data/EG29_Case.1.', 'PWR_fabrication', '', 'PWR_MOX_new', method_r ), 0.001/0.9*0.3/1.5, method )
+  method_r = [ '_MF' ]
+  method = [ 'M' ]
+  build_contrib('E3_second_PWR', read_transaction('data/EG29_Case.3.', '', 'PWR_fabrication', 'E3_second_stored', method_r ), 0.001/0.9*0.3/1.5, method )
+  build_contrib('J1_second', read_transaction('data/EG29_Case.3.', '', 'PWR_fabrication', 'J1_second_stored', method_r ), 0.001/0.9*0.3/1.5, method )
+  build_contrib('J1_prime', read_transaction('data/eg29_case.3.', 'PWR_separation', '', 'J1_prime', method_r ), 0.001/0.9*0.3/1.5, method )
+ 
+  build_contrib('E1_prime_FBR', read_transaction('data/EG29_Case.3.', 'FBR_driver_separation', '', 'E1_prime', method_r ), 0.001/0.36*0.7/1.5, method )
+  build_contrib('E1_second_FBR', read_transaction('data/EG29_Case.3.', '', 'FBR_driver_fabrication', 'E1_second_stored', method_r ), 0.001/0.36*0.7/1.5, method )
+  build_contrib('E2_prime_FBR', read_transaction('data/EG29_Case.3.', 'FBR_blanket_separation', '', 'E2_prime', method_r ), 0.001/0.36*0.7/1.5, method )
+  build_contrib('E2_second_FBR', read_transaction('data/EG29_Case.3.', '', 'FBR_driver_fabrication', 'E2_second_stored', method_r ), 0.001/0.36*0.7/1.5, method )
+  build_contrib('E3_prime_FBR', read_transaction('data/EG29_Case.3.', 'FBR_blanket_separation', '', 'E3_prime', method_r ), 0.001/0.36*0.7/1.5, method )
+  build_contrib('E3_second_FBR', read_transaction('data/EG29_Case.3.', 'FBR_blanket_separation', '', 'E3_second', method_r ), 0.001/0.36*0.7/1.5, method )
+  build_contrib('E4_FBR', read_transaction('data/EG29_Case.3.', '', 'FBR_blanket_fabrication', 'E4_stored', method_r ), 0.001/0.36*0.7/1.5, method )
+              
+  build_contrib('MOX_fuel', read_transaction('data/EG29_Case.3.', 'PWR_fabrication', '', 'PWR_MOX_new', method_r ), 0.001/0.9*0.3/1.5, method )
   
-  build_contrib('LWR_OUT', read_transaction('data/EG29_Case.1.', '', 'PWR_cooling', 'PWR_MOX_spent', method_r ), 0.001/0.9*0.3/1.5, method )
+  build_contrib('LWR_OUT', read_transaction('data/EG29_Case.3.', '', 'PWR_cooling', 'PWR_MOX_spent', method_r ), 0.001/0.9*0.3/1.5, method )
 
-  method_r = [ '_MLP-STD-2'  ]
-  method = [ 'MLP-STD-2' ]
-  build_contrib('J1_STR', read_inv('data/EG29_Case.1.', method_r ), 0.001/0.9*0.3/1.5, method )
+  #method_r = [ '_MLP-STD-2'  ]
+  #method = [ 'MLP-STD-2' ]
+  #build_contrib('J1_STR', read_inv('data/EG29_Case.3.', method_r ), 0.001/1*0.3/1.5, method )
 main()

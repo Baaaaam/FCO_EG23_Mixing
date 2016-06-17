@@ -10,362 +10,333 @@ show ylabel
 set xlabel "Date [y]"
 set ylabel "Pu contribution [t/GWey]"
 
-#PLOT J1 contribution stograe:
+#PLOT E1p contribution stograe:
 set key bottom left
-set output "plots/C_1.x.E3s_pu_contribution.png"
+set output "C_2.x.E1p_FBR_pu_contribution.png"
 set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/1_M_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/1_W_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_W_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W_E3_second_pu.dat' using 1:2 with linespoints title columnheader
+plot [0.25:100][] 'processed_data/1_M_E1_prime_FBR_pu.dat'  using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E1_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E1_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader
 
-
-#PLOT J1 contribution stograe:
-set key top left
+#PLOT E1p contribution stograe:
+set key bottom left
+set output "C_2.x.E1p_FBR_u_contribution.png"
 set ylabel "U contribution [t/GWey]"
-set output "plots/C_1.x.E3s_u_contribution.png"
-plot [0.25:100][] 'processed_data/1_M_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/1_W_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_W_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W_E3_second_u.dat' using 1:2 with linespoints title columnheader
+plot [0.25:100][] 'processed_data/1_M_E1_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E1_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E1_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader
 
-#PLOT J1 contribution stograe:
-set key center left
-set output "plots/C_1.x.J1s_pu_contribution.png"
+#PLOT E1s contribution stograe:
+set key bottom left
 set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/1_M_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/1_W_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_W_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W_J1_second_pu.dat' using 1:2 with linespoints title columnheader
+set output "C_2.x.E1s_FBR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E1_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E1_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E1_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader
 
-#PLOT J1 contribution stograe:
+#PLOT E1s contribution stograe:
 set key bottom left
 set ylabel "U contribution [t/GWey]"
-set output "plots/C_1.x.J1s_u_contribution.png"
-plot [0.25:100][] 'processed_data/1_M_J1_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_J1_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_J1_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/1_W_J1_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_W_J1_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_W_J1_second_u.dat' using 1:2 with linespoints title columnheader
+set output "C_2.x.E1s_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E1_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E1_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E1_second_FBR_u.dat' using 1:($2) with linespoints title columnheader
 
-#PLOT J1 contribution stograe:
-set key top right
-set output "plots/C_1.x.MOX.pu_contribution.png"
-set ylabel "Pu fraction in the LWR MOX fuel [%]"
-plot [0.25:100][] 'processed_data/1_M_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_M_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_M_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/1_W_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_W_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_W_MOX_fuel_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_MLP_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_MLP_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader
-
-#PLOT J1 contribution stograe:
-set key center right
-set output "plots/C_1.x.LWR_OUT_.pu_contribution.png"
-set ylabel "Pu fraction in the LWR MOX fuel [%]"
-plot [0.25:100][] 'processed_data/1_M_LWR_OUT_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_M_LWR_OUT_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_M_LWR_OUT_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/1_W_LWR_OUT_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_W_LWR_OUT_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_W_LWR_OUT_pu.dat' using 1:($2/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_MLP_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_MLP_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:($2*18/54/6.58036*100) with linespoints title columnheader
-
-
-
-
-
-#PLOT J1 contribution stograe:
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.3_MLP-STD-2.J1_STR.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_M.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_M_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_M_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_M_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_M_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_M_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-set key top left
-set output "plots/C_1.3_M.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_M_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_M_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_M_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_M_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_M_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_M_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_M_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_M_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_M_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_M_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_M_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-
-
-set key top left
-set output "plots/C_1.3_M_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_M_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_M_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_M_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_M_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_M_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-###################################################################################
-###################################################################################
-
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_W.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_W_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_W_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_W_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_W_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_W_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-set key top left
-set output "plots/C_1.3_W.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_W_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_W_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_W_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_W_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_W_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_W_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_W_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_W_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_W_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_W_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_W_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-
-
-set key top left
-set output "plots/C_1.3_W_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_W_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_W_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_W_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_W_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_W_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-###################################################################################
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_MLP.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_MLP_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_MLP_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_MLP_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_MLP_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_MLP_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-set key top left
-set output "plots/C_1.3_MLP.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_MLP_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_MLP_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_MLP_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_MLP_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_MLP_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_MLP_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_MLP_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_MLP_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_MLP_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_MLP_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_MLP_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-
-
-set key top left
-set output "plots/C_1.3_MLP_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_MLP_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_MLP_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_MLP_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_MLP_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_MLP_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-###################################################################################
-###################################################################################
-
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_MLP-STD.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_MLP-STD_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-set key top left
-set output "plots/C_1.3_MLP-STD.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_MLP-STD_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_MLP-STD_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-
-
-set key top left
-set output "plots/C_1.3_MLP-STD_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_MLP-STD_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-###################################################################################
-###################################################################################
-
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_MLP-STD-2.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_MLP-STD-2_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-set key top left
-set output "plots/C_1.3_MLP-STD-2.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_MOX_fuel_pu.dat' using 1:7 with linespoints title columnheader
-
-
-#PLOT J1 contribution stograe:
-set key top left
-set output "plots/C_1.2_MLP-STD-2_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/2_MLP-STD-2_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/2_MLP-STD-2_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-
-
-set key top left
-set output "plots/C_1.3_MLP-STD-2_LWR_OUT.MOX.pu_composition.png"
-set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][] 'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:3 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:4 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:5 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:6 with linespoints title columnheader, \
-  'processed_data/3_MLP-STD-2_LWR_OUT_pu.dat' using 1:7 with linespoints title columnheader
-###################################################################################
-
-
-#PLOT E3s Pu :
+#PLOT E2p contribution stograe:
 set key bottom left
 set ylabel "Pu contribution [t/GWey]"
-set output "plots/C_1.x_M.E3s_pu_contribution.png"
-plot [0.25:100][0.199:0.202] 'processed_data/1_M_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_E3_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_E3_second_pu.dat' using 1:2 with linespoints title columnheader
+set output "C_2.x.E2p_FBR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E2_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E2_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E2_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader
 
-
-#PLOT E3s U :
-set key top left
-set ylabel "U contribution [t/GWey]"
-set output "plots/C_1.x_M.E3s_u_contribution.png"
-plot [0.25:100][0.87:0.89] 'processed_data/1_M_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_E3_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_E3_second_u.dat' using 1:2 with linespoints title columnheader
-
-#PLOT J1s Pu:
-set ylabel "Pu contribution [t/GWey]"
-set key bottom left
-set output "plots/C_1.x_M.J1s_pu_contribution.png"
-plot [0.25:100][] 'processed_data/1_M_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_J1_second_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_J1_second_pu.dat' using 1:2 with linespoints title columnheader
-
-#PLOT J1s U :
+#PLOT E2p contribution stograe:
 set key bottom left
 set ylabel "U contribution [t/GWey]"
-set output "plots/C_1.x_M.J1s_u_contribution.png"
-plot [0.25:100][] 'processed_data/1_m_j1_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_J1_second_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_J1_second_u.dat' using 1:2 with linespoints title columnheader
+set output "C_2.x.E2p_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E2_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E2_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E2_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader
 
-#PLOT J1p Pu :
+#PLOT E2s contribution stograe:
 set key bottom left
-set output "plots/C_1.x_M.J1p_pu_contribution.png"
 set ylabel "Pu contribution [t/GWey]"
-plot [0.25:100][0.035:0.045] 'processed_data/1_M_J1_prime_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_J1_prime_pu.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_J1_prime_pu.dat' using 1:2 with linespoints title columnheader
+set output "C_2.x.E2s_FBR_pu_contribution.png"
+plot [0.25:100][0.128:0.132] 'processed_data/1_M_E2_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E2_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E2_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader
 
-#PLOT J1p U:
+#PLOT E2s contribution stograe:
+set key top left
+set ylabel "U contribution [t/GWey]"
+set output "C_2.x.E2s_FBR_u_contribution.png"
+plot [0.25:100][1.43:1.435] 'processed_data/1_M_E2_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E2_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E2_second_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3p contribution stograe:
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "C_2.x.E3p_FBR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E3_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E3_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E3_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3p contribution stograe:
 set key bottom left
 set ylabel "U contribution [t/GWey]"
-plot [0.25:100][0.6:0.604] 'processed_data/1_M_J1_prime_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/2_M_J1_prime_u.dat' using 1:2 with linespoints title columnheader, \
-  'processed_data/3_M_J1_prime_u.dat' using 1:2 with linespoints title columnheader
+set output "C_2.x.E3p_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E3_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E3_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E3_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3s FBR contribution stograe:
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "C_2.x.E3s_FBR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E3_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E3_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E3_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3s FBR contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "C_2.x.E3s_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E3_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E3_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E3_second_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3s PWR contribution stograe:
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "C_2.x.E3s_PWR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E3_second_PWR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E3_second_PWR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E3_second_PWR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3s PWR contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "C_2.x.E3s_PWR_u_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E3_second_PWR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E3_second_PWR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E3_second_PWR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E4_FBR contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "C_2.x.E4_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/1_M_E4_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_E4_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_E4_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT J1p contribution stograe:
+set key bottom left
+set output "C_2.x.J1p_pu_contribution.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/1_M_J1_prime_pu.dat'  using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_J1_prime_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_J1_prime_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT J1p contribution stograe:
+set key bottom left
+set output "C_2.x.J1p_u_contribution.png"
+set ylabel "U contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/1_M_J1_prime_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_J1_prime_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_J1_prime_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT J1s contribution stograe:
+set key bottom left
+set output "C_2.x.J1s_pu_contribution.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/1_M_J1_second_pu.dat'  using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_J1_second_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_J1_second_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT J1s contribution stograe:
+set key bottom left
+set output "C_2.x.J1s_u_contribution.png"
+set ylabel "U contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/1_M_J1_second_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/2_M_J1_second_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/3_M_J1_second_u.dat' using 1:($2) with linespoints title columnheader
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set key bottom left
+set output "Y_C_2.x.E1p_FBR_pu_contribution.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/y_1_M_E1_prime_FBR_pu.dat'  using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E1_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E1_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E1p contribution stograe:
+set key bottom left
+set output "Y_C_2.x.E1p_FBR_u_contribution.png"
+set ylabel "U contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/y_1_M_E1_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E1_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E1_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E1s contribution stograe:
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "Y_C_2.x.E1s_FBR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E1_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E1_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E1_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E1s contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "Y_C_2.x.E1s_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E1_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E1_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E1_second_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E2p contribution stograe:
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "Y_C_2.x.E2p_FBR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E2_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E2_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E2_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E2p contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "Y_C_2.x.E2p_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E2_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E2_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E2_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E2s contribution stograe:
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "Y_C_2.x.E2s_FBR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E2_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E2_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E2_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E2s contribution stograe:
+set key top left
+set ylabel "U contribution [t/GWey]"
+set output "Y_C_2.x.E2s_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E2_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E2_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E2_second_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3p contribution stograe:
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "Y_C_2.x.E3p_FBR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E3_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E3_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E3_prime_FBR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3p contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "Y_C_2.x.E3p_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E3_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E3_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E3_prime_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3s FBR contribution stograe:
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "Y_C_2.x.E3s_FBR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E3_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E3_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E3_second_FBR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3s FBR contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "Y_C_2.x.E3s_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E3_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E3_second_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E3_second_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3s PWR contribution stograe:
+set key bottom left
+set ylabel "Pu contribution [t/GWey]"
+set output "Y_C_2.x.E3s_PWR_pu_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E3_second_PWR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E3_second_PWR_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E3_second_PWR_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E3s PWR contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "Y_C_2.x.E3s_PWR_u_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E3_second_PWR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E3_second_PWR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E3_second_PWR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT E4_FBR contribution stograe:
+set key bottom left
+set ylabel "U contribution [t/GWey]"
+set output "Y_C_2.x.E4_FBR_u_contribution.png"
+plot [0.25:100][] 'processed_data/y_1_M_E4_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_E4_FBR_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_E4_FBR_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT J1p contribution stograe:
+set key bottom left
+set output "Y_C_2.x.J1p_pu_contribution.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/y_1_M_J1_prime_pu.dat'  using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_J1_prime_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_J1_prime_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT J1p contribution stograe:
+set key bottom left
+set output "Y_C_2.x.J1p_u_contribution.png"
+set ylabel "U contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/y_1_M_J1_prime_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_J1_prime_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_J1_prime_u.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT J1s contribution stograe:
+set key bottom left
+set output "Y_C_2.x.J1s_pu_contribution.png"
+set ylabel "Pu contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/y_1_M_J1_second_pu.dat'  using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_J1_second_pu.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_J1_second_pu.dat' using 1:($2) with linespoints title columnheader
+
+#PLOT J1s contribution stograe:
+set key bottom left
+set output "Y_C_2.x.J1s_u_contribution.png"
+set ylabel "U contribution [t/GWey]"
+plot [0.25:100][] 'processed_data/y_1_M_J1_second_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_2_M_J1_second_u.dat' using 1:($2) with linespoints title columnheader, \
+  'processed_data/y_3_M_J1_second_u.dat' using 1:($2) with linespoints title columnheader
+
+
