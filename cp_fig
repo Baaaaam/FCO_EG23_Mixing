@@ -11,3 +11,10 @@ cp plots/C_1.3.MOX.pu_contribution.png  ../FCO_repport/img/C_1_3_MOX_pu_contribu
 
 cp plots/C_1.3_MLP-STD.MOX.pu_composition.png    ../FCO_repport/img/C_1_3_MLP-STD_MOX_pu_composition.png
 cp plots/C_1.3_MLP-STD-2.MOX.pu_composition.png  ../FCO_repport/img/C_1_3_MLP-STD-2_MOX_pu_composition.png
+
+
+cp plots/C_1.3_W_LII.E3s.png ../FCO_repport/img/C_1_3_W_LII_E3s.png
+cp plots/C_1.3_W_LII.J1s.png ../FCO_repport/img/C_1_3_W_LII_J1s.png
+cp plots/C_1.3_W_LII.pu_contribution.png ../FCO_repport/img/C_1_3_W_LII_pu_contribution.png
+cp plots/C_1.3_W_LII.STR.pu_composition.png ../FCO_repport/img/C_1_3_W_LII_STR_pu_composition.png
+cp plots/C_1.3_W_LII_x10.pu_composition.png ../FCO_repport/img/C_1_3_W_LII_x10_pu_composition.png

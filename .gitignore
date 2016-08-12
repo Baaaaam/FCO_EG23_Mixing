@@ -147,3 +147,4 @@ data/script2
 *.dat
 *.png
 tmp
+cyclus.sqlite
