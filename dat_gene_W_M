@@ -10,7 +10,7 @@ if [[ ! (-d ./tmp) ]]; then
 fi
 cd tmp
 rm -rf ${BASE}_${CASE}
-git clone git@github.com:Baaaaam/FCO.git ./${BASE}_${CASE}
+git clone git@github.com:Baaaaam/EG29.git ./${BASE}_${CASE}
 cd ${BASE}_${CASE}
 
 git fetch origin
@@ -43,5 +43,5 @@ cyan -db cyclus.sqlite inv -nucs=238U J1_second_storage > ${BASE}_${CASE_}.inv.u
 cyan -db cyclus.sqlite inv -nucs=233u,234u,235u,236u,237u,238u J1_second_storage > ${BASE}_${CASE_}.inv.u
 
 
-mv EG29_Case*trans* /Users/mouginot/work/FCO/EG29/FCO_EG29_Mixing/data
-mv EG29_Case*inv* /Users/mouginot/work/FCO/EG29/FCO_EG29_Mixing/data
+mv EG29_Case*trans* /Users/mouginot/work/FCO/EG29/analyse_case1/data
+mv EG29_Case*inv* /Users/mouginot/work/FCO/EG29/analyse_case1/data
