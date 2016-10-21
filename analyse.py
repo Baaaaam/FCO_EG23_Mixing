@@ -236,7 +236,7 @@ def main():
   
   build_contrib('LWR_OUT', read_transaction('data/EG29_Case.1.', '', 'PWR_cooling', 'PWR_MOX_spent', method_r, True  ), 0.001/0.9*0.3/1.5, method, True  )
 
-  method_r = [ '_MLP', '_MLP-STD', '_MLP-STD-2','_MLP_STD_recipe_','_pucomp_', '_MLP-STD_overdischarged', '_MLP_STD_recipe__overdischarged'  ]
+  method_r = [ '_MLP', '_MLP-STD', '_MLP-STD-2','_MLP_STD_recipe_','_pucomp_', '_MLP-STD-overdischarged', '_MLP-STD-recipe-overdischarged'  ]
   method = [   'MLP', 'MLP-STD', 'MLP-STD-2','MLP-STD-recipe','pucomp','MLP-STD-od','MLP-STD-recipe-od' ]
   build_contrib('J1_STR', read_inv('data/EG29_Case.1.', method_r, True  ), 0.001/0.9*0.3/1.5, method, True  )
 

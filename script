@@ -28,7 +28,7 @@ source ~/.zshrc
 #./dat_gene EG29_Case.1.2_MLP_STD_recipe
 #./dat_gene EG29_Case.1.3_MLP_STD_recipe
 
-./dat_gene EG29_Case.1.2 MLP_STD_overdischarged
+#./dat_gene EG29_Case.1.2 MLP_STD_overdischarged
 #./dat_gene EG29_Case.1.3 MLP_STD_overdischarged
 ./dat_gene EG29_Case.1.2 MLP_STD_recipe_overdischarged
 ./dat_gene EG29_Case.1.3 MLP_STD_recipe_overdischarged
