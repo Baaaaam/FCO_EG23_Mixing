@@ -16,20 +16,20 @@ set ylabel "Pu contribution [t/GWey]"
 set key bottom right
 set output "plots_paper/nodecay.pu_contribution.png"
 set ylabel "Pu fraction in the LWR MOX fuel [%]"
-plot [0.25:300][5:15] 'processed_data/2_M_MOX_fuel_pu.dat' every ::1 using 1:($2/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 1 lc rgb "blue" title "fix no-decay", \
-  'processed_data/2_W_MOX_fuel_pu.dat' every ::1 using 1:($2/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 1 lc rgb "dark-green" title "Pu-eq no-decay", \
-  'processed_data/2_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 1 lc rgb "red" title "NN no-decay"
+plot [0.25:300][5:15] 'processed_data/2_M_MOX_fuel_pu.dat' every ::1 using 1:($2/6.58036*100) with lines lw 2dt 1 lc rgb "blue" title "fix no-decay", \
+  'processed_data/2_W_MOX_fuel_pu.dat' every ::1 using 1:($2/6.58036*100) with lines lw 2dt 1 lc rgb "dark-green" title "Pu-eq no-decay", \
+  'processed_data/2_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/6.58036*100) with lines lw 2dt 1 lc rgb "red" title "NN no-decay"
 
 #PLOT J1 contribution stograe:
 set key bottom right
 set output "plots_paper/decay.pu_contribution.png"
 set ylabel "Pu fraction in the LWR MOX fuel [%]"
-plot [0.25:300][5:15] 'processed_data/2_M_MOX_fuel_pu.dat' every ::1 using 1:($2/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 1 lc rgb "blue" title "fix no-decay", \
-  'processed_data/3_M_MOX_fuel_pu.dat' every ::1 using 1:($2/(29565*0.001*0.3/0.9/1.5)*100) with  lines lw 2dt 2 lc rgb "blue" title "fix decay", \
-  'processed_data/2_W_MOX_fuel_pu.dat' every ::1 using 1:($2/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 1 lc rgb "dark-green" title "Pu-eq no-decay", \
-  'processed_data/3_W_MOX_fuel_pu.dat' every ::1 using 1:($2/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 2 lc rgb "dark-green"title "Pu-eq decay", \
-  'processed_data/2_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 1 lc rgb "red" title "NN no-decay", \
-  'processed_data/3_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 2 lc rgb "red" title "NN decay"
+plot [0.25:300][5:15] 'processed_data/2_M_MOX_fuel_pu.dat' every ::1 using 1:($2/6.58036*100) with lines lw 2dt 1 lc rgb "blue" title "fix no-decay", \
+  'processed_data/3_M_MOX_fuel_pu.dat' every ::1 using 1:($2/6.58036*100) with  lines lw 2dt 2 lc rgb "blue" title "fix decay", \
+  'processed_data/2_W_MOX_fuel_pu.dat' every ::1 using 1:($2/6.58036*100) with lines lw 2dt 1 lc rgb "dark-green" title "Pu-eq no-decay", \
+  'processed_data/3_W_MOX_fuel_pu.dat' every ::1 using 1:($2/6.58036*100) with lines lw 2dt 2 lc rgb "dark-green"title "Pu-eq decay", \
+  'processed_data/2_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/6.58036*100) with lines lw 2dt 1 lc rgb "red" title "NN no-decay", \
+  'processed_data/3_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/6.58036*100) with lines lw 2dt 2 lc rgb "red" title "NN decay"
 
 
 
@@ -92,7 +92,7 @@ plot [0.25:100][0:0.75] 'processed_data/2_MLP-STD-recipe_MOX_fuel_pu.dat' using 
 set key bottom right
 set output "plots_paper/irradiation.pu_contribution.png"
 set ylabel "Pu fraction in the LWR MOX fuel [%]"
-plot [0.25:300][5:15] 'processed_data/2_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 1 lc rgb "red" title "NN no-decay recipe", \
-  'processed_data/3_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 2 lc rgb "red" title "NN decay recipe", \
-  'processed_data/2_MLP-STD_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 1 lc rgb "orange"  title "NN no-decay depletion", \
-  'processed_data/3_MLP-STD_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/(29565*0.001*0.3/0.9/1.5)*100) with lines lw 2dt 2 lc rgb "orange" title "NN decay depletion"
+plot [0.25:300][5:15] 'processed_data/2_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/6.58036*100) with lines lw 2dt 1 lc rgb "red" title "NN no-decay recipe", \
+  'processed_data/3_MLP-STD-recipe_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/6.58036*100) with lines lw 2dt 2 lc rgb "red" title "NN decay recipe", \
+  'processed_data/2_MLP-STD_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/6.58036*100) with lines lw 2dt 1 lc rgb "orange"  title "NN no-decay depletion", \
+  'processed_data/3_MLP-STD_MOX_fuel_pu.dat' every ::1 using 1:($2*18/54/6.58036*100) with lines lw 2dt 2 lc rgb "orange" title "NN decay depletion"
