@@ -230,8 +230,8 @@ def main():
   build_contrib('J1_second', read_transaction('data/EG29_Case.1.', '', 'PWR_fabrication', 'J1_second_stored', method_r, True  ), 0.001/0.9*0.3/1.5, method, True  )
   build_contrib('J1_prime', read_transaction('data/eg29_case.1.', 'PWR_separation', '', 'J1_prime', method_r, True  ), 0.001/0.9*0.3/1.5, method, True  )
 
-  method_r = [ '_', '_MF', '_MLP', '_MLP-STD', '_MLP-STD-2', '_MLP_STD_recipe_','_pucomp_'   ]
-  method = [ 'W', 'M', 'MLP', 'MLP-STD', 'MLP-STD-2', 'MLP-STD-recipe','pucomp' ]
+  method_r = [ '_MLP', '_MLP-STD', '_MLP-STD-2','_MLP_STD_recipe_','_pucomp_', '_MLP-STD-overdischarged', '_MLP-STD-recipe-overdischarged'  ]
+  method = [   'MLP', 'MLP-STD', 'MLP-STD-2','MLP-STD-recipe','pucomp','MLP-STD-od','MLP-STD-recipe-od' ]
   build_contrib('MOX_fuel', read_transaction('data/EG29_Case.1.', 'PWR_fabrication', '', 'PWR_MOX_new', method_r, True  ), 0.001/0.9*0.3/1.5, method, True  )
   
   build_contrib('LWR_OUT', read_transaction('data/EG29_Case.1.', '', 'PWR_cooling', 'PWR_MOX_spent', method_r, True  ), 0.001/0.9*0.3/1.5, method, True  )

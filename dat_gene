@@ -5,18 +5,18 @@ BASE=$1
 CASE=$2
 CASE_=$(sed 's/_/-/g' <<< $CASE)
 
-if [[ ! (-d ./tmp) ]]; then
-    mkdir ./tmp
-fi
+#if [[ ! (-d ./tmp) ]]; then
+#    mkdir ./tmp
+#fi
 cd tmp
-rm -rf ${BASE}_${CASE}
-git clone git@github.com:Baaaaam/EG29.git ./${BASE}_${CASE}
+#rm -rf ${BASE}_${CASE}
+#git clone git@github.com:Baaaaam/EG29.git ./${BASE}_${CASE}
 cd ${BASE}_${CASE}
-
-git fetch origin
-git checkout ${BASE}
-git checkout ${BASE}_${CASE}
-rm cyclus.sqlite; cyclus main.xml -v2
+#
+#git fetch origin
+#git checkout ${BASE}
+#git checkout ${BASE}_${CASE}
+#rm cyclus.sqlite; cyclus main.xml -v2
 
 cyan -db cyclus.sqlite trans > ${BASE}_${CASE_}.trans
 cyan -db cyclus.sqlite trans -nucs=238Pu > ${BASE}_${CASE_}.trans.pu8
